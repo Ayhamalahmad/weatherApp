@@ -1,0 +1,77 @@
+// Media
+// Max
+
+$extraSmall: "(max-width:576px)";
+$maxMobile: "(max-width:767px)";
+$maxSmall: "(max-width:991px)";
+$maxLarge: "(max-width:1200px)";
+// Min
+$minSmall: "(min-width:768px)";
+$minMedium: "(min-width:992px)";
+$minLarge: "(min-width:1200px)";
+
+// Colors
+$light: #fff;
+$Secondary:#5f3dc4;
+$primaryBrandColor: #353589;
+$grad:linear-gradient(317.63deg,#353589 -7.42%,#9a9aff 120.45%);
+body {
+  // Violet
+  --primery: #f3f0ff;
+  --th3: #9775fa;
+  --Secondary: #5f3dc4;
+
+  --Violet-0: #f3f0ff;
+  --Violet-1: #e5dbff;
+  --Violet-2: #d0bfff;
+  --Violet-3: #b197fc;
+  --Violet-4: #9775fa;
+  --Violet-5: #845ef7;
+  --Violet-6: #7950f2;
+  --Violet-7: #7048e8;
+  --Violet-8: #6741d9;
+  --Violet-9: #5f3dc4;
+  //   Dark
+  --Dark-0: #c1c2c5;
+  --Dark-1: #a6a7ab;
+  --Dark-2: #909296;
+  --Dark-3: #5c5f66;
+  --Dark-4: #373a40;
+  --Dark-5: #2c2e33;
+  --Dark-6: #25262b;
+  --Dark-7: #1a1b1e;
+  --Dark-8: #141517;
+  --Dark-9: #101113;
+}
+body.dark {
+  --primery: #1a1b1e;
+  --Secondary: #f3f0ff;
+  --th3: #9775fa;
+}
+
+// transition
+$pri-Transition:all .3s ease-in-out;
+
+
+
+
+
+
+
+
+
+
+$primary: #eee;
+$slate-gray: #a8b3bc;
+$teal: #43655a;
+$dark-red: #b00003;
+$dark-blue-gray: #2f4858;
+$light-lavender-gray: #aca7cb;
+//
+$primary: #eee;
+$Lavender: #faf7ff;
+$dark-grayish-purple: #474554;
+$SteelGray: #5f5c6d;
+$Periwinkle: #8685ef;
+$dark-red: #b00003;
+$DarkMaroon: #6e0000;

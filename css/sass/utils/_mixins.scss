@@ -1,0 +1,34 @@
+// Media mixin
+@mixin minMedium {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+// Overlay mixin
+@mixin overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+// prefixes mixin
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+// Animation Mixin
+@mixin keyframes($name) {
+
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

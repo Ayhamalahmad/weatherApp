@@ -1,0 +1,88 @@
+@use "../utils/variables" as *;
+.header {
+  padding: 38px 0;
+  background-color: var(--primery);
+  // position: fixed;
+  width: 100%;
+  .container {
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    &.active {
+      flex-wrap: wrap;
+    }
+    // LOGO
+    .logo {
+      a {
+        i,
+        svg {
+          color: var(--Secondary);
+          font-size: 30px;
+        }
+      }
+    }
+    // Nav
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      font-size: 1.2rem;
+      @media #{$maxSmall} {
+        display: none;
+      }
+      &.active {
+        flex: 100%;
+        order: 1;
+        margin-top: 20px;
+        display: inherit;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .links {
+        display: flex;
+        gap: 10px;
+        &.active {
+          flex-direction: column;
+        }
+        li {
+          color: var(--Secondary);
+          // margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+      //
+      .theme {
+        display: flex;
+        align-items: center;
+        background-color: var(--Secondary);
+        color: var(--primery);
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        i,
+        svg {
+          display: none;
+          &.active {
+            display: inherit;
+          }
+        }
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+    // Menu
+    .menu {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: var(--Secondary);
+      color: var(--primery);
+      @media #{$minMedium} {
+        display: none;
+      }
+    }
+  }
+}

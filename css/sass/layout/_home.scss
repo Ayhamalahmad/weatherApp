@@ -1,0 +1,198 @@
+@use "../utils/variables" as *;
+.home {
+  background-color: var(--primery);
+
+  // margin-top: 17px;
+  .container {
+    height: calc(100vh - 120px);
+    // margin-top: 10px;
+    background-image: url("/imges/banner-img.6da33f89.png");
+    // background-image: url("/imges/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 60px;
+    background-size: cover;
+    // background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media #{$maxLarge} {
+        flex-direction: column;
+        gap: 20px;
+        height: unset;
+    }
+    @media #{$maxMobile} {
+            border-radius: unset;
+    }
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      input {
+        padding: 10px;
+        border-radius: 13px;
+        border: none;
+        outline: none;
+        color: $light;
+        &::placeholder {
+          //   color: var(--primery);
+          color: $light;
+        }
+        //
+        background: rgba(53, 53, 137, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: $Secondary;
+        color: $light;
+        transition: $pri-Transition;
+        &:hover {
+          background: $primaryBrandColor;
+          //   color: var(--primery);
+        }
+      }
+      .search-button {
+      }
+      .location-button {
+      }
+    }
+
+    .left {
+      .weather-info {
+        position: relative;
+        h1 {
+          color: $light;
+          font-size: 38px;
+          font-weight: 700;
+          line-height: 49px;
+          margin-bottom: 10px;
+          @media #{$minSmall} {
+            font-size: 76px;
+            line-height: 99px;
+          }
+        }
+        .country {
+          position: absolute;
+          top: 37px;
+          text-transform: uppercase;
+          right: 0;
+          font-weight: bold;
+        }
+      }
+
+      .weather-info {
+        display: flex;
+        gap: 10px;
+        color: $light;
+        font-weight: bold;
+        @media #{$maxMobile} {
+            flex-direction: column;
+        font-weight: unset;
+        }
+        p {
+        }
+        .weather-date {
+        }
+        .weather-update-time {
+        }
+      }
+      .boxes {
+        background-color: $light;
+        border-radius: 10px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* عرض عنصرين في عمودين */
+        // grid-gap: 10px; /* المسافة بين العناصر */
+        gap: 20px;
+        width: calc(100% / 2);
+        width: 416px;
+        margin-top: 40px;
+        @media #{$maxMobile} {
+            width: 300px;
+        }
+        .box {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          div {
+            background-color: $Secondary;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: $light;
+            i,
+            svg {
+            }
+            img {
+            }
+            p {
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      background: $grad;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 25px 40px;
+      border-radius: 30px;
+      width: 206px;
+      text-align: center;
+      @media #{$minSmall} {
+        width: 306px;
+      }
+      > span {
+        background-color: $primaryBrandColor;
+        text-align: start;
+        width: fit-content;
+        padding: 6px 20px;
+        border-radius: 30px;
+        color: white;
+      }
+      .weather-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .weather-icon {
+          font-size: 100px;
+          //   color: $light;
+          color: transparent;
+        }
+        .temperature {
+          color: $light;
+          font-size: 38px;
+          font-weight: 700;
+          line-height: 49px;
+          @media #{$minSmall} {
+            font-size: 76px;
+            line-height: 99px;
+          }
+        }
+        .temperature-range {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 23px;
+          color: $light;
+          @media #{$minSmall} {
+            font-size: 24px;
+            line-height: 31px;
+          }
+        }
+      }
+    }
+  }
+}
