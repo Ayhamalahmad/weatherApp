@@ -373,13 +373,8 @@ a {
   gap: 20px;
   padding: 25px 40px;
   border-radius: 30px;
-  width: 206px;
+  width: 306px;
   text-align: center;
-}
-@media (min-width:768px) {
-  .home .container .right {
-    width: 306px;
-  }
 }
 .home .container .right .weather {
   display: flex;

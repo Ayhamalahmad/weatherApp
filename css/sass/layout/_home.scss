@@ -171,10 +171,10 @@
       gap: 20px;
       padding: 25px 40px;
       border-radius: 30px;
-      width: 206px;
+      // width: 206px;
+      width: 306px;
       text-align: center;
       @media #{$minSmall} {
-        width: 306px;
       }
       .weather {
         display: flex;
