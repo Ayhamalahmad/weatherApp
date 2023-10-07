@@ -223,12 +223,27 @@ a {
 
 .home {
   background-color: var(--primery);
+  background-image: url(../images/background-img.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 60px;
+  background-size: cover;
   padding-bottom: 10px;
+}
+@media (max-width:767px) {
+  .home {
+    border-radius: unset;
+  }
+}
+@media (min-width:768px) {
+  .home {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 .home .container {
   height: calc(100vh - 110px);
   padding-bottom: 10px;
-  background-image: url(../../../imges/background-img.png);
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 60px;

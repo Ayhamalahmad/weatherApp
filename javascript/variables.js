@@ -1,0 +1,15 @@
+export let country = document.querySelector(".country");
+export let locationInput = document.querySelector(".location-input");
+export let searchBTN = document.querySelector(".search-button");
+export let temperature = document.querySelector(".temperature");
+export let tempMin = document.querySelector(".temp-min");
+export let tempMax = document.querySelector(".temp-max");
+export let weatherIcon = document.querySelector(".weather-icon");
+export let humidity = document.querySelector(".humidity p");
+export let wind = document.querySelector(".wind p");
+export let clouds = document.querySelector(".clouds p");
+export let rain = document.querySelector(".rain p");
+export let filedMeessage = document.querySelector(".filed");
+export let weatherDescription = document.querySelector(".description");
+export let cityName = document.querySelector(".city-name");
+export let locationBtn = document.querySelector(".location-button");

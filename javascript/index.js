@@ -1,19 +1,23 @@
 import handleData from "./date.js";
-let country = document.querySelector(".country");
-let locationInput = document.querySelector(".location-input");
-let searchBTN = document.querySelector(".search-button");
-let temperature = document.querySelector(".temperature");
-let tempMin = document.querySelector(".temp-min");
-let tempMax = document.querySelector(".temp-max");
-let weatherIcon = document.querySelector(".weather-icon");
-let humidity = document.querySelector(".humidity p");
-let wind = document.querySelector(".wind p");
-let clouds = document.querySelector(".clouds p");
-let rain = document.querySelector(".rain p");
-let filedMeessage = document.querySelector(".filed");
-let weatherDescription = document.querySelector(".description");
-let cityName = document.querySelector(".city-name");
-let locationBtn = document.querySelector(".location-button");
+import {
+  country,
+  locationInput,
+  searchBTN,
+  temperature,
+  tempMin,
+  tempMax,
+  weatherIcon,
+  humidity,
+  wind,
+  clouds,
+  rain,
+  filedMeessage,
+  weatherDescription,
+  cityName,
+  locationBtn,
+} from "./variables.js";
+let latitude1;
+let longitude1;
 // Api Url
 // https://wecast.vercel.app/
 let APIKey = "473a86fc6ac47386e6d6c5132cc575a8";
@@ -26,14 +30,15 @@ async function getWeather() {
     let response = await fetch(apiUrl);
     let data = await response.json();
     console.log(data);
+    // getWeatherWeekly();
     handleData();
+    // getWeatherWeekly(longitude,latitude);
     if (data) {
       if (data && data.cod === "404") {
         filedMeessage.classList.add("active");
       } else {
-        if(data.name){
+        if (data.name) {
           cityName.textContent = data.name;
-
         }
         filedMeessage.classList.remove("active");
       }
@@ -45,6 +50,9 @@ async function getWeather() {
         rain.textContent = `rain ${0}h`;
       }
       if (data.main && data.wind && data.weather && data.clouds && data.sys) {
+        // latitude = data.coord.lat;
+        // longitude = data.coord.lon;
+        // console.log(latitude, longitude);
         country.textContent = data.sys.country;
         humidity.textContent = `${data.main.humidity}%`;
         temperature.textContent = Math.trunc(data.main.temp);
@@ -66,6 +74,7 @@ async function getWeather() {
 }
 window.addEventListener("load", () => {
   getUserLocation(successCallback, positionErrorCallback);
+  
 });
 getWeather();
 locationBtn.addEventListener("click", (e) => {
@@ -81,6 +90,11 @@ function getUserLocation(successCallback, positionErrorCallback) {
 
 function successCallback(position) {
   const { latitude, longitude } = position.coords;
+  if (position) {
+    latitude1 = position.coords.lat;
+    longitude1 = position.coords.lon;
+  }
+  // positionA=position.coords;
   apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${APIKey}`;
   getWeather();
 }
@@ -90,7 +104,6 @@ function positionErrorCallback(error) {
 
 function searchCity(city) {
   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`;
-
   getWeather();
 }
 searchBTN.addEventListener("click", () => {
@@ -105,3 +118,27 @@ locationInput.addEventListener("keydown", (e) => {
     }
   }
 });
+//
+function getWeatherWeekly() {
+  console.log("latitude1,longitude1",latitude1,longitude1);
+  if (longitude1, latitude1) {
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude1}&lon=${longitude1}&cnt=8&appid=${APIKey}`;
+  }
+  getWeather();
+  // const apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=8&appid=${APIKey}`;
+  // fetch(apiUrl)
+  //   .then((response) => {
+  //     if (!response.ok) {
+  //       throw new Error("Network response was not ok");
+  //     }
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log("getWeatherWeekly", data);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error fetching weather data:", error);
+  //   });
+}
+
+

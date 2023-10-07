@@ -12,9 +12,9 @@ $minLarge: "(min-width:1200px)";
 
 // Colors
 $light: #fff;
-$Secondary:#5f3dc4;
+$Secondary: #5f3dc4;
 $primaryBrandColor: #353589;
-$grad:linear-gradient(317.63deg,#353589 -7.42%,#9a9aff 120.45%);
+$grad: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
 body {
   // Violet
   --primery: #f3f0ff;
@@ -50,16 +50,7 @@ body.dark {
 }
 
 // transition
-$pri-Transition:all .3s ease-in-out;
-
-
-
-
-
-
-
-
-
+$pri-Transition: all 0.3s ease-in-out;
 
 $primary: #eee;
 $slate-gray: #a8b3bc;
