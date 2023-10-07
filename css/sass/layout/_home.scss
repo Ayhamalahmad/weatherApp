@@ -1,12 +1,13 @@
 @use "../utils/variables" as *;
 .home {
   background-color: var(--primery);
-
+  padding-bottom: 10px;
   // margin-top: 17px;
   .container {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 110px);
+    padding-bottom: 10px;
     // margin-top: 10px;
-    background-image: url("imges/banner-img.6da33f89.png");
+    background-image: url(../../../imges/background-img.png);
     // background-image: url("/imges/banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -17,12 +18,12 @@
     align-items: center;
     justify-content: space-between;
     @media #{$maxLarge} {
-        flex-direction: column;
-        gap: 20px;
-        height: unset;
+      flex-direction: column;
+      gap: 20px;
+      height: unset;
     }
     @media #{$maxMobile} {
-            border-radius: unset;
+      border-radius: unset;
     }
     .search-container {
       display: flex;
@@ -63,6 +64,17 @@
           //   color: var(--primery);
         }
       }
+      .filed {
+        background-color: $dark-red;
+        color: white;
+        padding: 2px 10px;
+        border-radius: 5px;
+        text-align: center;
+        display: none;
+        &.active {
+          display: inherit;
+        }
+      }
       .search-button {
       }
       .location-button {
@@ -72,36 +84,44 @@
     .left {
       .weather-info {
         position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
         h1 {
           color: $light;
           font-size: 38px;
           font-weight: 700;
           line-height: 49px;
-          margin-bottom: 10px;
+          // margin-bottom: 10px;
+          margin-bottom: 0;
           @media #{$minSmall} {
-            font-size: 76px;
+            // font-size: 76px;
             line-height: 99px;
           }
         }
         .country {
-          position: absolute;
-          top: 37px;
+          // position: absolute;
+          // top: 37px;
+          // top: 9px;
           text-transform: uppercase;
-          right: 0;
+          // right: 0;
           font-weight: bold;
+          color: $light;
         }
       }
 
-      .weather-info {
+      .date-info {
         display: flex;
         gap: 10px;
         color: $light;
-        font-weight: bold;
+        // font-weight: bold;
         @media #{$maxMobile} {
-            flex-direction: column;
-        font-weight: unset;
+          flex-direction: column;
+          font-weight: unset;
         }
         p {
+          text-transform: capitalize;
         }
         .weather-date {
         }
@@ -120,7 +140,7 @@
         width: 416px;
         margin-top: 40px;
         @media #{$maxMobile} {
-            width: 300px;
+          width: 300px;
         }
         .box {
           display: flex;
@@ -136,8 +156,9 @@
             }
             img {
             }
-            p {
-            }
+          }
+          p {
+            text-transform: capitalize;
           }
         }
       }
@@ -155,14 +176,38 @@
       @media #{$minSmall} {
         width: 306px;
       }
-      > span {
-        background-color: $primaryBrandColor;
-        text-align: start;
-        width: fit-content;
-        padding: 6px 20px;
-        border-radius: 30px;
-        color: white;
+      .weather {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media #{$maxSmall} {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .date,
+        .description {
+          background-color: $primaryBrandColor;
+          text-align: start;
+          width: fit-content;
+          // padding: 6px 20px;
+          padding: 6px 10px;
+          border-radius: 30px;
+          color: white;
+          text-transform: capitalize;
+        }
+        .date {
+        }
+        .description {
+        }
       }
+      // > span {
+      //   background-color: $primaryBrandColor;
+      //   text-align: start;
+      //   width: fit-content;
+      //   padding: 6px 20px;
+      //   border-radius: 30px;
+      //   color: white;
+      // }
       .weather-info {
         display: flex;
         flex-direction: column;
@@ -172,16 +217,25 @@
           //   color: $light;
           color: transparent;
         }
-        .temperature {
-          color: $light;
-          font-size: 38px;
-          font-weight: 700;
-          line-height: 49px;
-          @media #{$minSmall} {
-            font-size: 76px;
-            line-height: 99px;
+        .temperature-container {
+          .temperature {
+            color: $light;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 49px;
+            @media #{$minSmall} {
+              font-size: 76px;
+              line-height: 99px;
+            }
+          }
+          sup {
+            color: $light;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 49px;
           }
         }
+
         .temperature-range {
           font-size: 18px;
           font-weight: 500;

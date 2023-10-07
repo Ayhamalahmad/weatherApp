@@ -50,60 +50,78 @@
             <h1 class="city-name">San Francisco</h1>
             <span class="country">tr</span>
           </div>
-          <div class="weather-info">
+          <div class="date-info">
             <p class="weather-date">Monday, May 23</p>
             <p class="weather-update-time">Update As Of 2:45 PM</p>
-        </div>
-        
+          </div>
 
           <div class="boxes">
-            <div class="box">
+            <div class="box wind">
               <div class="">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-wind"></i>
               </div>
               <p>Wind 3km/h</p>
             </div>
-            <div class="box">
+
+            <div class="box humidity">
               <div class="">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-tint"></i>
               </div>
               <p>Wind 3km/h</p>
             </div>
-            <div class="box">
+
+            <div class="box clouds">
               <div class="">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-cloud-sun"></i>
               </div>
               <p>Rain 78%</p>
             </div>
-            <div class="box">
+
+            <div class="box rain">
               <div class="">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-cloud-showers-heavy"></i>
               </div>
-              <p>Rain 78%</p>
+              <p>Rain 78h</p>
             </div>
           </div>
         </div>
         <div class="search-container">
-          <input type="text" class="location-input" placeholder="London, San Francisco">
+          <span class="filed">The name is not found. Please try again</span>
+
+          <input
+            type="text"
+            class="location-input"
+            placeholder="London, San Francisco"
+          />
           <button class="search-button">Search</button>
           <button class="location-button">Get Current Location</button>
         </div>
         <div class="right">
-          <span>Today</span>
-
-          <div class="weather-info">
-            <img src="/imges/sun_cloud.webp"  class="weather-icon">
-            <!-- <i class="fas fa-smog weather-icon"></i> -->
-            <span class="temperature">23<sub>℃</sub></span>
-            <h5 class="temperature-range">73℉ - 88℉</h5>
+          <div class="weather">
+            <span class="date">Today</span>
+            <span class="description">clear sky</span>
+            <i class="01d"></i>
           </div>
-          
+          <div class="weather-info">
+            <img src="/imges/sun_cloud.webp" class="weather-icon" />
+            <!-- <i class="fas fa-smog weather-icon"></i> -->
+            <div class="temperature-container">
+              <span class="temperature">23</span>
+              <sup class="unit">℃</sup>
+            </div>
+            <h5 class="temperature-range">
+              <span class="temp-min"></span>
+              <span class="temp-max"></span>
+            </h5>
+          </div>
         </div>
       </div>
     </section>
-    <script src="javascript/index.js"></script>
+    <script  type="module" src="javascript/index.js"></script>
     <script src="javascript/theme.js"></script>
     <script src="javascript/handleClasses.js"></script>
+    <script type="module" src="javascript/date.js"></script>
+    <script type="module" src="javascript/handlers.js"></script>
     <script src="javascript/all.min.js"></script>
   </body>
 </html>
