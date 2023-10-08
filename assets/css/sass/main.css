@@ -505,6 +505,8 @@ a {
 .weekly .container .buttons-wrapper .navigation-buttons button:hover {
   background: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
   color: #fff;
+  color: var(--primaryBrandColor);
+  color: var(--dark);
 }
 .weekly .gallary {
   scroll-behavior: smooth;
@@ -520,8 +522,12 @@ a {
   display: none;
 }
 .weekly .gallary .today-wrapper {
+  color: var(--primaryBrandColor);
+  overflow: hidden;
   display: flex;
   align-items: center;
+  color: var(--primaryBrandColor);
+  justify-content: center;
   gap: 20px;
 }
 .weekly .gallary .today-wrapper .weather-box {
@@ -531,18 +537,22 @@ a {
   flex-direction: column;
   gap: 20px;
   padding: 20px 30px;
+  color: var(--primaryBrandColor);
+  width: -moz-fit-content;
+  width: fit-content;
   width: 350px;
   border-radius: 50px;
   flex: none;
 }
 .weekly .gallary .today-wrapper .weather-box:hover {
   background: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
+  color: var(--primaryBrandColor);
 }
-.weekly .gallary .today-wrapper .weather-box:hover .temperature .temperature-high {
+.weekly .gallary .today-wrapper .weather-box:hover Hover .temperature .temperature-high {
   transition: all 0.3s ease-in-out;
   color: #fff;
 }
-.weekly .gallary .today-wrapper .weather-box:hover .temperature .temperature-low {
+.weekly .gallary .today-wrapper .weather-box:hover Hover .temperature .temperature-low {
   transition: all 0.3s ease-in-out;
   color: #fff;
 }
@@ -692,12 +702,25 @@ a {
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  color: var(--primaryBrandColor);
+  padding: 20px 30px;
   padding-top: 30px;
   padding-bottom: 30px;
+  color: var(--primaryBrandColor);
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--primaryBrandColor);
+  width: 130px;
   border-radius: 50px;
   flex: none;
   border-radius: 9999px;
   width: 196px;
+  color: var(--primaryBrandColor);
+}
+@media (min-width:768px) {
+  .weekly .weekly-gallary .weekly-wrapper .box {
+    color: var(--primaryBrandColor);
+  }
 }
 .weekly .weekly-gallary .weekly-wrapper .box:hover {
   background: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);

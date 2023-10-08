@@ -63,7 +63,7 @@
           &:hover {
             background: $grad;
             color: $light;
-            // color: var(--dark);
+            color: var(--primaryBrandColor); color: var(--dark);
           }
         }
         .previous-button {
@@ -87,10 +87,10 @@
       display: none;
     }
     .today-wrapper {
-      // overflow: hidden;
+      color: var(--primaryBrandColor); overflow: hidden;
       display: flex;
       align-items: center;
-      // justify-content: center;
+      color: var(--primaryBrandColor); justify-content: center;
       gap: 20px;
 
       .weather-box {
@@ -100,13 +100,13 @@
         flex-direction: column;
         gap: 20px;
         padding: 20px 30px;
-        // width: fit-content;
+        color: var(--primaryBrandColor); width: fit-content;
         width: 350px;
         border-radius: 50px;
         flex: none;
         &:hover {
           background: $grad;
-          // Hover
+          color: var(--primaryBrandColor); Hover
           .temperature {
             .temperature-high {
               transition: $pri-Transition;
@@ -285,17 +285,17 @@
         align-items: center;
         flex-direction: column;
         gap: 20px;
-        // padding: 20px 30px;
+        color: var(--primaryBrandColor); padding: 20px 30px;
         padding-top: 30px;
         padding-bottom: 30px;
-        // width: fit-content;
-        // width: 130px;
+        color: var(--primaryBrandColor); width: fit-content;
+        color: var(--primaryBrandColor); width: 130px;
         border-radius: 50px;
         flex: none;
         border-radius: 9999px;
         width: 196px;
-        // @media #{$minSmall} {
-        // }
+        color: var(--primaryBrandColor); @media #{$minSmall} {
+        color: var(--primaryBrandColor); }
         &:hover {
           background: $grad;
           .box-content {
