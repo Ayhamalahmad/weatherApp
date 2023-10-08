@@ -1,12 +1,13 @@
 @use "../utils/variables" as *;
 .weekly {
   padding-top: 30px;
-
+  background-color: var(--light);
   .container {
     .buttons-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 20px;
       button {
         padding: 5px 15px;
         border: none;
@@ -15,19 +16,32 @@
       }
       .button-group {
         button {
+          transition: $pri-Transition;
           position: relative;
-
           background: transparent;
-          &::before {
-            content: "";
-            transform: translate(-50%, 100%);
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            height: 3px;
-            width: 11px;
-            border-radius: 5px;
-            background-color: red;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 23px;
+          color: rgb(147 147 147/1);
+          @media #{$minSmall} {
+            font-size: 24px;
+            line-height: 31px;
+          }
+          &.active {
+            color: var(--primaryBrandColor);
+            transition: $pri-Transition;
+            &::before {
+              transition: $pri-Transition;
+              content: "";
+              transform: translate(-50%, 100%);
+              position: absolute;
+              left: 50%;
+              top: 100%;
+              height: 3px;
+              width: 11px;
+              border-radius: 5px;
+              background-color: $primaryBrandColor;
+            }
           }
         }
         .today-button {
@@ -37,7 +51,6 @@
       }
 
       .navigation-buttons {
-        
         button {
           background: transparent;
           border-radius: 50%;
@@ -45,10 +58,12 @@
           height: 35px;
           border: 1px solid #e5e7eb;
           padding: 5px;
-          transition: all .3s ;
-          &:hover{
+          transition: $pri-Transition;
+          color: var(--dark);
+          &:hover {
             background: $grad;
-            color: white;
+            color: $light;
+            // color: var(--dark);
           }
         }
         .previous-button {
@@ -64,6 +79,10 @@
     overflow-x: scroll;
     width: 90%;
     margin: 30px auto;
+    display: none;
+    &.active{
+      display: inherit;
+    }
     &::-webkit-scrollbar {
       display: none;
     }
@@ -90,18 +109,22 @@
           // Hover
           .temperature {
             .temperature-high {
+              transition: $pri-Transition;
               color: $light;
             }
             .temperature-low {
+              transition: $pri-Transition;
               color: $light;
             }
           }
           &:hover {
             .wind-speed {
               .icon {
+                transition: $pri-Transition;
                 color: $light;
               }
               .wind-speed-text {
+                transition: $pri-Transition;
                 color: $light;
               }
             }
@@ -109,14 +132,17 @@
             .rain {
               .icon {
                 color: $light;
+                transition: $pri-Transition;
               }
               .rain-text {
                 color: $light;
+                transition: $pri-Transition;
               }
             }
 
             .weather-description {
               p {
+                transition: $pri-Transition;
                 color: $light;
               }
             }
@@ -160,7 +186,8 @@
             font-size: 32px;
             font-weight: 700;
             line-height: 42px;
-            color: $primaryBrandColor;
+            color: var(--primaryBrandColor);
+            color: var(--primaryBrandColor);
             @media #{$minSmall} {
               font-size: 57px;
               line-height: 74px;
@@ -168,7 +195,7 @@
           }
           .temperature-low {
             opacity: 0.7;
-            color: $primaryBrandColor;
+            color: var(--primaryBrandColor);
             font-size: 24px;
             font-weight: 700;
             line-height: 34px;
@@ -229,6 +256,84 @@
             @media #{$minSmall} {
               font-size: 18px;
               line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .weekly-gallary {
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    width: 90%;
+    margin: 30px auto;
+    display: none;
+    &.active{
+      display: inherit;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .weekly-wrapper {
+      display: flex;
+    align-items: center;
+    gap: 20px;
+      .box {
+        background-color: var(--lavender);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        // padding: 20px 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        // width: fit-content;
+        // width: 130px;
+        border-radius: 50px;
+        flex: none;
+        border-radius: 9999px;
+        width: 196px;
+        // @media #{$minSmall} {
+        // }
+        &:hover {
+          background: $grad;
+          .box-content {
+            .date,.temperature{
+              transition: $pri-Transition;
+            color: $light;
+            }
+          }
+        }
+        .box-image {
+          img {
+            width: 100%;
+          }
+        }
+
+        .box-content {
+          margin-top: 15px;
+          .date {
+            color: var(--gray-medium);
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21px;
+            @media #{$minSmall} {
+              font-size: 18px;
+              line-height: 30px;
+            }
+          }
+          .temperature {
+            margin-top: 18px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 42px;
+            color: var(--primaryBrandColor);
+            color: var(--primaryBrandColor);
+            @media #{$minSmall} {
+              font-size: 57px;
+              line-height: 74px;
             }
           }
         }

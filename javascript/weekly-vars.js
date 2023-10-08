@@ -1,1 +1,10 @@
 export let groupAllBtn =document.querySelectorAll(".button-group button");
+export let todayBtn =document.querySelector(".today-button");
+export let weeklyBtn =document.querySelector(".weekly-button");
+export let gallary =document.querySelector(".gallary");
+export let gallaryWeekly =document.querySelector(".weekly-gallary");
+export let weatherBox =document.querySelector(".weather-box");
+export let weeklyBox =document.querySelector(".weekly-gallary .weekly-wrapper .box");
+export let nextBtn = document.querySelector(".next-button");
+export let previouBtn = document.querySelector(".previous-button");
+export let navigationBtns = document.querySelectorAll(".navigation-buttons button");

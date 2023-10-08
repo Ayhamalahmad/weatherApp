@@ -4,7 +4,13 @@ import {
   headerNav,
   headerLinks,
 } from "./header-vars.js";
-import { groupAllBtn } from "./weekly-vars.js";
+import {
+  groupAllBtn,
+  todayBtn,
+  weeklyBtn,
+  gallary,
+  gallaryWeekly,
+} from "./weekly-vars.js";
 
 menuBtn.addEventListener("click", () => {
   headerContainer.classList.toggle("active");
@@ -13,12 +19,23 @@ menuBtn.addEventListener("click", () => {
 });
 //
 groupAllBtn.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      btn.forEach((b)=>{
-          b.classList.remove("active");
-      })
-      if(!e.target.classList.contains("active")){
-          e.target.classList.add("active");
-      }
+  btn.addEventListener("click", (e) => {
+    gallaryWeekly.classList.remove("active");
+    gallary.classList.remove("active");
+
+    if (e.target.classList.contains("today-button")) {
+      gallary.classList.add("active");
+      console.log("gallary");
+    } else{
+      gallaryWeekly.classList.add("active");
+      console.log("gallaryWeekly");
+    }
+    groupAllBtn.forEach((b) => {
+      b.classList.remove("active");
+    });
+    if (!e.target.classList.contains("active")) {
+      e.target.classList.add("active");
+    }
+   
   });
 });

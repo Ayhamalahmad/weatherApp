@@ -17,39 +17,27 @@ $primaryBrandColor: #353589;
 $grad: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
 body {
   // Violet
+  --light:#fff;
   --primery: #f3f0ff;
   --th3: #9775fa;
-  --Secondary: #5f3dc4;
   --lavender: #f3f0ff;
+  --primaryBrandColor: #353589;
+  --Secondary: #5f3dc4;
   --royal-blue: #7668e5;
-  --gray-medium:#666;
+  --gray-medium: #666;
+  --dark:#1a1b1e;
 
-  --Violet-0: #f3f0ff;
-  --Violet-1: #e5dbff;
-  --Violet-2: #d0bfff;
-  --Violet-3: #b197fc;
-  --Violet-4: #9775fa;
-  --Violet-5: #845ef7;
-  --Violet-6: #7950f2;
-  --Violet-7: #7048e8;
-  --Violet-8: #6741d9;
-  --Violet-9: #5f3dc4;
-  //   Dark
-  --Dark-0: #c1c2c5;
-  --Dark-1: #a6a7ab;
-  --Dark-2: #909296;
-  --Dark-3: #5c5f66;
-  --Dark-4: #373a40;
-  --Dark-5: #2c2e33;
-  --Dark-6: #25262b;
-  --Dark-7: #1a1b1e;
-  --Dark-8: #141517;
-  --Dark-9: #101113;
+;
 }
 body.dark {
+  --dark:#f3f0ff;
+  --light:#1a1b1e;
   --primery: #1a1b1e;
   --Secondary: #f3f0ff;
   --th3: #9775fa;
+  --lavender: rgb(18 28 50/1);
+  --primaryBrandColor: #7668e5;
+  --gray-medium:#f3f0ff;
 }
 
 // transition
@@ -69,3 +57,25 @@ $SteelGray: #5f5c6d;
 $Periwinkle: #8685ef;
 $dark-red: #b00003;
 $DarkMaroon: #6e0000;
+
+// --Violet-0: #f3f0ff;
+// --Violet-1: #e5dbff;
+// --Violet-2: #d0bfff;
+// --Violet-3: #b197fc;
+// --Violet-4: #9775fa;
+// --Violet-5: #845ef7;
+// --Violet-6: #7950f2;
+// --Violet-7: #7048e8;
+// --Violet-8: #6741d9;
+// --Violet-9: #5f3dc4;
+// //   Dark
+// --Dark-0: #c1c2c5;
+// --Dark-1: #a6a7ab;
+// --Dark-2: #909296;
+// --Dark-3: #5c5f66;
+// --Dark-4: #373a40;
+// --Dark-5: #2c2e33;
+// --Dark-6: #25262b;
+// --Dark-7: #1a1b1e;
+// --Dark-8: #141517;
+// --Dark-9: #101113
