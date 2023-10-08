@@ -46,7 +46,7 @@ export default function handleData(){
       minutes < 10 ? "0" : ""
     }${minutes} ${hours >= 12 ? "PM" : "AM"}`;
     let nowDate = `${daysOfWeek[currentDate.getDay()]} , ${
-      monthAbbreviations[currentDate.getMonth() + 1]
+      monthAbbreviations[currentDate.getMonth()]
     } ${currentDate.getDate()}`;
     weatherDate.textContent = nowDate;
     weatherUpdateTime.textContent = `Update As Of ${formattedTime}`;

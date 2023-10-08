@@ -1,0 +1,1 @@
+export let groupAllBtn =document.querySelectorAll(".button-group button");

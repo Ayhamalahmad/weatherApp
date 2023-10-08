@@ -1,14 +1,15 @@
 @use "../utils/variables" as *;
 .home {
   background-color: var(--primery);
-  background-image: url(../images/background-img.png);
+  // /assets/imges/background-img.png => live vs code
+  background-image: url(/assets/imges/background-img.png);
   // url(../imges/background-img.png);
 
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 60px;
   background-size: cover;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   // margin-top: 17px;
   @media #{$maxMobile} {
     border-radius:unset;

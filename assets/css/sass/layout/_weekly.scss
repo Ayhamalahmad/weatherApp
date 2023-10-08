@@ -1,0 +1,238 @@
+@use "../utils/variables" as *;
+.weekly {
+  padding-top: 30px;
+
+  .container {
+    .buttons-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+        text-transform: capitalize;
+      }
+      .button-group {
+        button {
+          position: relative;
+
+          background: transparent;
+          &::before {
+            content: "";
+            transform: translate(-50%, 100%);
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 3px;
+            width: 11px;
+            border-radius: 5px;
+            background-color: red;
+          }
+        }
+        .today-button {
+        }
+        .weekly-button {
+        }
+      }
+
+      .navigation-buttons {
+        
+        button {
+          background: transparent;
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          border: 1px solid #e5e7eb;
+          padding: 5px;
+          transition: all .3s ;
+          &:hover{
+            background: $grad;
+            color: white;
+          }
+        }
+        .previous-button {
+        }
+        .next-button {
+        }
+      }
+    }
+  }
+
+  .gallary {
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    width: 90%;
+    margin: 30px auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .today-wrapper {
+      // overflow: hidden;
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+      gap: 20px;
+
+      .weather-box {
+        background-color: var(--lavender);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 30px;
+        // width: fit-content;
+        width: 350px;
+        border-radius: 50px;
+        flex: none;
+        &:hover {
+          background: $grad;
+          // Hover
+          .temperature {
+            .temperature-high {
+              color: $light;
+            }
+            .temperature-low {
+              color: $light;
+            }
+          }
+          &:hover {
+            .wind-speed {
+              .icon {
+                color: $light;
+              }
+              .wind-speed-text {
+                color: $light;
+              }
+            }
+
+            .rain {
+              .icon {
+                color: $light;
+              }
+              .rain-text {
+                color: $light;
+              }
+            }
+
+            .weather-description {
+              p {
+                color: $light;
+              }
+            }
+          }
+        }
+        img,
+        i,
+        svg {
+        }
+
+        .weather-info {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          span {
+            background-color: #353589;
+            text-align: start;
+            width: -moz-fit-content;
+            /* width: fit-content; */
+            padding: 5px 15px;
+            border-radius: 30px;
+            color: white;
+            text-transform: capitalize;
+          }
+          .weather-text {
+          }
+          .weather-time {
+            background-color: var(--royal-blue);
+          }
+        }
+
+        .temperature {
+          display: flex;
+          align-items: self-end;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+          margin-top: 15px;
+
+          .temperature-high {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 42px;
+            color: $primaryBrandColor;
+            @media #{$minSmall} {
+              font-size: 57px;
+              line-height: 74px;
+            }
+          }
+          .temperature-low {
+            opacity: 0.7;
+            color: $primaryBrandColor;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 34px;
+            @media #{$minSmall} {
+              font-size: 32px;
+              line-height: 42px;
+            }
+          }
+        }
+
+        .wind-rain {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          .wind-speed {
+            .icon {
+              color: var(--royal-blue);
+            }
+            .wind-speed-text {
+              color: var(--gray-medium);
+              font-family: Lato;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 21px;
+              @media #{$minSmall} {
+                font-size: 18px;
+                line-height: 30px;
+              }
+            }
+          }
+
+          .rain {
+            .icon {
+              color: var(--royal-blue);
+            }
+            .rain-text {
+              color: var(--gray-medium);
+              font-family: Lato;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 21px;
+              @media #{$minSmall} {
+                font-size: 18px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+
+        .weather-description {
+          p {
+            color: var(--gray-medium);
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21px;
+            @media #{$minSmall} {
+              font-size: 18px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
