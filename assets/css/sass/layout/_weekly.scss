@@ -63,7 +63,6 @@
           &:hover {
             background: $grad;
             color: $light;
-            color: var(--primaryBrandColor); color: var(--dark);
           }
         }
         .previous-button {
@@ -80,17 +79,17 @@
     width: 90%;
     margin: 30px auto;
     display: none;
-    &.active{
+    &.active {
       display: inherit;
     }
     &::-webkit-scrollbar {
       display: none;
     }
     .today-wrapper {
-      color: var(--primaryBrandColor); overflow: hidden;
+      color: var(--primaryBrandColor);
       display: flex;
       align-items: center;
-      color: var(--primaryBrandColor); justify-content: center;
+      color: var(--primaryBrandColor);
       gap: 20px;
 
       .weather-box {
@@ -100,18 +99,17 @@
         flex-direction: column;
         gap: 20px;
         padding: 20px 30px;
-        color: var(--primaryBrandColor); width: fit-content;
+        color: var(--primaryBrandColor);
+        width: fit-content;
         width: 350px;
         border-radius: 50px;
         flex: none;
+
         &:hover {
           background: $grad;
-          color: var(--primaryBrandColor); Hover
+          color: var(--primaryBrandColor);
           .temperature {
-            .temperature-high {
-              transition: $pri-Transition;
-              color: $light;
-            }
+            .temperature-high,
             .temperature-low {
               transition: $pri-Transition;
               color: $light;
@@ -269,7 +267,7 @@
     width: 90%;
     margin: 30px auto;
     display: none;
-    &.active{
+    &.active {
       display: inherit;
     }
     &::-webkit-scrollbar {
@@ -277,37 +275,45 @@
     }
     .weekly-wrapper {
       display: flex;
-    align-items: center;
-    gap: 20px;
+      align-items: center;
+      gap: 20px;
       .box {
         background-color: var(--lavender);
         display: flex;
         align-items: center;
         flex-direction: column;
         gap: 20px;
-        color: var(--primaryBrandColor); padding: 20px 30px;
+        color: var(--primaryBrandColor);
+        padding: 20px 30px;
         padding-top: 30px;
         padding-bottom: 30px;
-        color: var(--primaryBrandColor); width: fit-content;
-        color: var(--primaryBrandColor); width: 130px;
+        color: var(--primaryBrandColor);
+        width: fit-content;
+        color: var(--primaryBrandColor);
+        width: 130px;
         border-radius: 50px;
         flex: none;
         border-radius: 9999px;
         width: 196px;
-        color: var(--primaryBrandColor); @media #{$minSmall} {
-        color: var(--primaryBrandColor); }
+        color: var(--primaryBrandColor);
+        @media #{$minSmall} {
+          color: var(--primaryBrandColor);
+        }
         &:hover {
           background: $grad;
           .box-content {
-            .date,.temperature{
+            .date,
+            .temperature {
               transition: $pri-Transition;
-            color: $light;
+              color: $light;
             }
           }
         }
         .box-image {
           img {
             width: 100%;
+            filter: drop-shadow(3px 3px rgb(70, 69, 69));
+            // box-shadow: 0 45px 65px rgba(0,0,0,0.50), 0 35px 22px rgba(0,0,0,0.16);
           }
         }
 

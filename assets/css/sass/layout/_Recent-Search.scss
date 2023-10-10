@@ -1,0 +1,81 @@
+@use "../utils/variables" as *;
+.recent-search {
+  background-color: var(--light-gray);
+  .container {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    // margin-left: 0;
+    @media #{$maxMobile} {
+      flex-direction: column;
+      padding: 120px 15px;
+    }
+    @media #{$minLarge2} {
+      margin-left: 312px;
+    }
+    .recent-left {
+      h1,p{
+        color: var(--dark);
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 42px;
+        @media #{$minSmall} {
+          font-size: 57px;
+          line-height: 74px;
+        }
+      }
+      p {
+      }
+    }
+    .recent-right {
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      width: calc(100% - 20px);
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: none;
+        .box {
+          position: relative;
+          img {
+          // width: 100%;
+            border-radius: 45px;
+          }
+          .contant {
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            gap: 10px;
+            padding: 30px 0 0 30px;
+            align-items: start;
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+            h2,
+            p {
+              color: $light;
+            }
+            p {
+            }
+
+            h2 {
+            }
+          }
+        }
+      }
+    }
+  }
+}

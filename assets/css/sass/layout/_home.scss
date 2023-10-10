@@ -143,125 +143,125 @@
         .weather-update-time {
         }
       }
-      .boxes {
-        background-color: $light;
-        border-radius: 10px;
-        padding: 10px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* عرض عنصرين في عمودين */
-        // grid-gap: 10px; /* المسافة بين العناصر */
-        gap: 20px;
-        width: calc(100% / 2);
-        width: 416px;
-        margin-top: 40px;
-        @media #{$maxMobile} {
-          width: 300px;
-        }
-        .box {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          div {
-            background-color: $Secondary;
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: $light;
-            i,
-            svg {
-            }
-            img {
-            }
-          }
-          p {
-            text-transform: capitalize;
-          }
-        }
-      }
-    }
-
-    .right {
-      background: $grad;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 25px 40px;
-      border-radius: 30px;
-      // width: 206px;
-      width: 306px;
-      text-align: center;
-      @media #{$minSmall} {
-      }
-      .weather {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        @media #{$maxSmall} {
-          flex-direction: column;
-          gap: 10px;
-        }
-        .date,
-        .description {
-          background-color: $primaryBrandColor;
-          text-align: start;
-          width: fit-content;
-          // padding: 6px 20px;
-          padding: 6px 10px;
-          border-radius: 30px;
-          color: white;
-          text-transform: capitalize;
-        }
-        .date {
-        }
-        .description {
-        }
-      }
-      // > span {
-      //   background-color: $primaryBrandColor;
-      //   text-align: start;
-      //   width: fit-content;
-      //   padding: 6px 20px;
-      //   border-radius: 30px;
-      //   color: white;
+      // .boxes {
+      //   background-color: $light;
+      //   border-radius: 10px;
+      //   padding: 10px;
+      //   display: grid;
+      //   grid-template-columns: repeat(2, 1fr); /* عرض عنصرين في عمودين */
+      //   // grid-gap: 10px; /* المسافة بين العناصر */
+      //   gap: 20px;
+      //   width: calc(100% / 2);
+      //   width: 416px;
+      //   margin-top: 40px;
+      //   @media #{$maxMobile} {
+      //     width: 300px;
+      //   }
+      //   .box {
+      //     display: flex;
+      //     align-items: center;
+      //     gap: 20px;
+      //     div {
+      //       background-color: $Secondary;
+      //       padding: 10px 20px;
+      //       border-radius: 10px;
+      //       color: $light;
+      //       i,
+      //       svg {
+      //       }
+      //       img {
+      //       }
+      //     }
+      //     p {
+      //       text-transform: capitalize;
+      //     }
+      //   }
       // }
-      .weather-info {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        .weather-icon {
-          font-size: 100px;
-          //   color: $light;
-          color: transparent;
-        }
-        .temperature-container {
-          .temperature {
-            color: $light;
-            font-size: 38px;
-            font-weight: 700;
-            line-height: 49px;
-            @media #{$minSmall} {
-              font-size: 76px;
-              line-height: 99px;
-            }
-          }
-          sup {
-            color: $light;
-            font-size: 38px;
-            font-weight: 700;
-            line-height: 49px;
-          }
-        }
-
-        .temperature-range {
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 23px;
-          color: $light;
-          @media #{$minSmall} {
-            font-size: 24px;
-            line-height: 31px;
-          }
-        }
-      }
     }
+
+    // .right {
+    //   background: $grad;
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 20px;
+    //   padding: 25px 40px;
+    //   border-radius: 30px;
+    //   // width: 206px;
+    //   width: 306px;
+    //   text-align: center;
+    //   @media #{$minSmall} {
+    //   }
+    //   .weather {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     @media #{$maxSmall} {
+    //       flex-direction: column;
+    //       gap: 10px;
+    //     }
+    //     .date,
+    //     .description {
+    //       background-color: $primaryBrandColor;
+    //       text-align: start;
+    //       width: fit-content;
+    //       // padding: 6px 20px;
+    //       padding: 6px 10px;
+    //       border-radius: 30px;
+    //       color: white;
+    //       text-transform: capitalize;
+    //     }
+    //     .date {
+    //     }
+    //     .description {
+    //     }
+    //   }
+    //   // > span {
+    //   //   background-color: $primaryBrandColor;
+    //   //   text-align: start;
+    //   //   width: fit-content;
+    //   //   padding: 6px 20px;
+    //   //   border-radius: 30px;
+    //   //   color: white;
+    //   // }
+    //   .weather-info {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 10px;
+    //     .weather-icon {
+    //       font-size: 100px;
+    //       //   color: $light;
+    //       color: transparent;
+    //     }
+    //     .temperature-container {
+    //       .temperature {
+    //         color: $light;
+    //         font-size: 38px;
+    //         font-weight: 700;
+    //         line-height: 49px;
+    //         @media #{$minSmall} {
+    //           font-size: 76px;
+    //           line-height: 99px;
+    //         }
+    //       }
+    //       sup {
+    //         color: $light;
+    //         font-size: 38px;
+    //         font-weight: 700;
+    //         line-height: 49px;
+    //       }
+    //     }
+
+    //     .temperature-range {
+    //       font-size: 18px;
+    //       font-weight: 500;
+    //       line-height: 23px;
+    //       color: $light;
+    //       @media #{$minSmall} {
+    //         font-size: 24px;
+    //         line-height: 31px;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

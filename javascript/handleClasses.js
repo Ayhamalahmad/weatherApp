@@ -25,10 +25,8 @@ groupAllBtn.forEach((btn) => {
 
     if (e.target.classList.contains("today-button")) {
       gallary.classList.add("active");
-      console.log("gallary");
-    } else{
+    } else {
       gallaryWeekly.classList.add("active");
-      console.log("gallaryWeekly");
     }
     groupAllBtn.forEach((b) => {
       b.classList.remove("active");
@@ -36,6 +34,5 @@ groupAllBtn.forEach((btn) => {
     if (!e.target.classList.contains("active")) {
       e.target.classList.add("active");
     }
-   
   });
 });

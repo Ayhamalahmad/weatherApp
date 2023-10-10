@@ -9,7 +9,8 @@ $maxLarge: "(max-width:1200px)";
 $minSmall: "(min-width:768px)";
 $minMedium: "(min-width:992px)";
 $minLarge: "(min-width:1200px)";
-
+$minLarge2: "(min-width: 1280px)";
+// #F7F8FA => do not  forget to make it var
 // Colors
 $light: #fff;
 $Secondary: #5f3dc4;
@@ -21,6 +22,7 @@ body {
   --primery: #f3f0ff;
   --th3: #9775fa;
   --lavender: #f3f0ff;
+  --light-gray: #f7f8fa;
   --primaryBrandColor: #353589;
   --Secondary: #5f3dc4;
   --royal-blue: #7668e5;
@@ -33,6 +35,7 @@ body.dark {
   --dark:#f3f0ff;
   --light:#1a1b1e;
   --primery: #1a1b1e;
+  --light-gray:#1a1b1e;
   --Secondary: #f3f0ff;
   --th3: #9775fa;
   --lavender: rgb(18 28 50/1);

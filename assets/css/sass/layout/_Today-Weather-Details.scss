@@ -1,0 +1,204 @@
+@use "../utils/variables" as *;
+.today-weather-details {
+    background-image: url(../../imges/details-bg.png);
+    padding: 45px 0 60px;
+    @media #{$minSmall} {
+        padding: 105px 0 120px;
+    }
+  display: flex;
+  flex-direction: column;
+  .text {
+    text-align: center;
+    color: $light;
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 42px;
+      @media #{$minSmall} {
+        font-size: 57px;
+        line-height: 74px;
+      }
+    }
+    p {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      margin-top: 10px;
+      @media #{$minSmall} {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    gap: 20px;
+    justify-content: center;
+    @media #{$maxLarge} {
+        flex-direction: column;
+    }
+    @media #{$minSmall} {
+        margin-top: 55px;
+    }
+    .right {
+      .weather {
+        .date {
+        }
+        .description {
+        }
+        i {
+        }
+      }
+      .weather-info {
+        .weather-icon {
+        }
+        .temperature-container {
+          .temperature {
+          }
+          .unit {
+          }
+        }
+        .temperature-range {
+          .temp-min {
+          }
+          .temp-max {
+          }
+        }
+      }
+    }
+
+    .time-info-container {
+        display: flex;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+      @media #{$minLarge} {
+        order: -1;
+      }
+      .time-con {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 30px;
+        }
+        .time-sunrise,
+        .time-sunset {
+          position: relative;
+          padding: 10px;
+          color: $light;
+          .content {
+            position: absolute;
+            z-index: 9999;
+            top: 90px;
+            left: 29px;
+            .time-label {
+            }
+            .time-value {
+              font-size: 24px;
+              font-weight: 600;
+              line-height: 34px;
+              @media #{$minSmall} {
+                font-size: 32px;
+                line-height: 42px;
+              }
+            }
+          }
+        }
+      }
+
+      .boxes {
+        .box {
+          &.wind {
+          }
+          &.humidity {
+          }
+          &.clouds {
+          }
+          &.rain {
+          }
+        }
+      }
+    }
+  }
+  .weather-container {
+    background-image: url(../../imges/news_update.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 5px 0 15px 5px;
+    color: $light;
+
+    @media #{$minSmall} {
+      padding: 10px 45px 23px 30px;
+    }
+    .temperature-range {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .high-temperature,
+      .current-temperature {
+        color: $light;
+      }
+      .current-temperature {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 42px;
+        @media #{$minSmall} {
+          font-size: 57px;
+          line-height: 74px;
+        }
+      }
+      .high-temperature {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 34px;
+        @media #{$minSmall} {
+          font-size: 32px;
+          line-height: 42px;
+        }
+      }
+    }
+    .weather-info {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      gap: 10px;
+      .weather-details {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        // color: $light;
+        &:not(:last-child) {
+          border-right: 1px solid $light;
+          padding-right: 5px;
+        }
+        .weather-icon {
+        }
+        .temperature {
+        }
+        .time {
+        }
+        .condition {
+        }
+      }
+    }
+    .news-heading {
+    }
+    .forecast-link {
+      i {
+      }
+    }
+  }
+}

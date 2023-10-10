@@ -1,6 +1,6 @@
 let weatherUpdateTime = document.querySelector(".weather-update-time");
 let weatherDate = document.querySelector(".date-info .weather-date");
-const daysOfWeek = [
+export const daysOfWeek = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -8,6 +8,15 @@ const daysOfWeek = [
   "Thursday",
   "Friday",
   "Saturday",
+];
+export const daysOfWeekAbbreviations = [
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat",
 ];
 const months = [
   "January",
@@ -23,7 +32,7 @@ const months = [
   "November",
   "December",
 ];
-const monthAbbreviations = [
+export const monthAbbreviations = [
   "Jan",
   "Feb",
   "Mar",
