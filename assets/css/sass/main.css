@@ -320,7 +320,7 @@ a {
 
 .home {
   background-color: var(--primery);
-  background-image: url(/assets/imges/background-img.png);
+  background-image: url(../../imges/background-img.png);
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 60px;
