@@ -13,25 +13,25 @@
   .container{
     width: 100%;
   .text {
-    text-align: center;
+    // text-align: center;
     color: $light;
     h2 {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 42px;
-      @media #{$minSmall} {
-        font-size: 57px;
-        line-height: 74px;
-      }
+      // font-size: 32px;
+      // font-weight: 700;
+      // line-height: 42px;
+      // @media #{$minSmall} {
+        // font-size: 57px;
+        // line-height: 74px;
+      // }
     }
     p {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
-      margin-top: 10px;
-      @media #{$minSmall} {
-        padding-left: 6rem;
-        padding-right: 6rem;
-      }
+      // padding-left: 0.25rem;
+      // padding-right: 0.25rem;
+      // margin-top: 10px;
+      // @media #{$minSmall} {
+        // padding-left: 6rem;
+        // padding-right: 6rem;
+      // }
     }
   }
   .cards {

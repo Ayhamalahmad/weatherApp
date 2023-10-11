@@ -18,3 +18,50 @@
     }
   }
 }
+// 
+.navigation-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  button {
+    transition: $pri-Transition;
+    position: relative;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    // 
+    background: transparent;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e5e7eb;
+    // padding: 5px;
+    padding: 4px 10px;
+    transition: $pri-Transition;
+    color: var(--dark);
+    cursor: pointer;
+    &:hover {
+      background: $grad;
+      color: $light;
+    }
+  }
+  .previous-button {
+  }
+  .next-button {
+  }
+}
+
+// a button
+.a-btn{
+  background-color: var(--primaryBrandColor);
+  color: $light;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: $sec-Transition;
+  &:hover{
+    background-image: $grad;
+  }
+} 

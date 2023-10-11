@@ -2,7 +2,7 @@
 
 @use "../sass/utils/variables" as *;
 @use "../sass/utils/mixins" as *;
-
+@use "../sass/components/global" as *;
 @use "../sass/components/buttons" as *;
 
 @use "../sass/layout/grid" as *;
@@ -16,4 +16,11 @@
 @use "../sass/layout/Recent-Search" as *;
 
 @use "../sass/layout/Today-Weather-Details" as *;
+
+@use "../sass/layout/Best-Hotel-In-Location" as *;
+
+@use "../sass/layout/Best-Restaurants-In-Location" as *;
+
+@use "../sass/layout/Top-City-Forecast" as *;
+
 

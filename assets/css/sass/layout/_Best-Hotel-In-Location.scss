@@ -1,0 +1,181 @@
+@use "../utils/variables" as *;
+#hotels {
+  padding-top: 105px;
+  padding-bottom: 105px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+    .hotel-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      .hotel-title {
+        color: var(--dark);
+        width: 66.67%;
+        @media #{$maxMobile} {
+          // width: 41.67%;
+          width: 100%;
+        }
+        h2 {
+          color: var(--dark);
+          // font-size: 32px;
+          font-weight: 700;
+          // line-height: 42px;
+          // @media #{$minSmall} {
+          font-size: 57px;
+          line-height: 74px;
+          // }
+        }
+      }
+
+      .navigation-buttons {
+        @media #{$minSmall} {
+          width: 66.67%;
+          // width: 41.67%;
+        }
+        justify-content: end;
+        .previous-button {
+          i {
+            /* Styles for the previous button and its icon */
+          }
+        }
+
+        .next-button {
+          i {
+            /* Styles for the next button and its icon */
+          }
+        }
+      }
+    }
+
+    .hotel-gallery {
+      margin-top: 30px;
+      .hotel-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        touch-action: pan-y;
+        .hotel-card {
+          background-color: var(--Dark-4);
+          padding: 20px;
+          width: fit-content;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          @media #{$minMedium} {
+            width: calc((100% - 20px) / 3);
+          }
+          @media #{$maxSmall} {
+            width: calc((100% - 20px) / 2);
+          }
+          @media #{$extraSmall} {
+            width: calc(100% - 20px / 1);
+          }
+
+          .cover {
+            overflow: hidden;
+            border-radius: 20px;
+            img {
+              // width: 100%;
+              // height: 100%;
+              // max-width: 100%;
+              border-radius: 20px;
+              display: block;
+              // vertical-align: middle;
+              transition: $sec-Transition;
+              &:hover {
+                transform: scale(1.1);
+              }
+              // Add your cover image styles here
+            }
+          }
+
+          .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .hotel-info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .hotel-title {
+        color: var(--dark);
+
+              }
+
+              .hotel-location {
+                color: var(--gray-medium);
+                i,svg,img {
+                  margin: 0 10px;
+                }
+              }
+            }
+
+            .hotel-address {
+              &.figure-caption {
+                color: var(--gray-medium);
+                // Add your styles for the figure caption here
+              }
+            }
+
+            .hotel-price {
+              color: var(--dark);
+              .currency-symbol {
+                color: $limeGreen;
+              }
+
+              // Add your styles for the price value here
+
+              .price-per-night {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                // Add your styles for "Per Night" here
+              }
+            }
+          }
+          .button-container {
+            margin-top: 25px;
+            a {
+            }
+            .book-now-button {
+              margin-right: 15px;
+            }
+            .details-button {
+              cursor: pointer;
+              color: var(--primaryBrandColor);
+              &:hover {
+                transition: $sec-Transition;
+                i,
+                svg,
+                img {
+                  padding-left: 5px;
+                }
+              }
+              i,
+              svg,
+              img {
+                transition: $sec-Transition;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .see-more {
+      margin: 40px auto;
+      @media #{$minSmall} {
+        margin: 60px auto;
+      }
+      a {
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "../utils/variables" as *;
+
+.top-city-forecast {
+  // background-color: red;
+  padding: 50px 0 60px;
+  @media #{$minSmall} {
+    padding: 105px 0 120px
+}
+  .container {
+    .text {
+        color: var(--dark);
+      h2 {
+      }
+      p {
+      }
+    }
+    .countries{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        gap: 1.25rem;
+        @media #{$minSmall} {
+            margin-top: 55px;
+        }
+    .country-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding: 30px;
+      border-radius: 30px;
+      width: fit-content;
+      background-color: var(--Deep-Midnight-Blue);
+      @media #{$minSmall} {
+        width: 196px;
+      }
+      .country-flag {
+        padding: 10px;
+        background-color: var(--Lavender-Blue);
+        border-radius: 10px;
+        img {
+          max-width: 100%;
+          width: 50px;
+        }
+      }
+
+      .country-link {
+        color: var(--dark);
+      }
+    }
+    
+}
+  }
+}

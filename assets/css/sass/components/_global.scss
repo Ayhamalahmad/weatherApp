@@ -1,0 +1,181 @@
+@use "../utils/variables" as *;
+// weather card
+.right {
+  background: $grad;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 40px;
+  border-radius: 30px;
+  // width: 206px;
+  width: 306px;
+  text-align: center;
+  @media #{$minSmall} {
+  }
+  .weather {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media #{$maxSmall} {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .date,
+    .description {
+      background-color: $primaryBrandColor;
+      text-align: start;
+      width: fit-content;
+      // padding: 6px 20px;
+      padding: 6px 10px;
+      border-radius: 30px;
+      color: white;
+      text-transform: capitalize;
+    }
+    .date {
+    }
+    .description {
+    }
+  }
+  // > span {
+  //   background-color: $primaryBrandColor;
+  //   text-align: start;
+  //   width: fit-content;
+  //   padding: 6px 20px;
+  //   border-radius: 30px;
+  //   color: white;
+  // }
+
+  .weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .weather-icon {
+      font-size: 100px;
+      max-width: 100%;
+      //   color: $light;
+      color: transparent;
+    }
+    .temperature-container {
+      margin-top: 10px;
+      .temperature {
+        color: $light;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 49px;
+        @media #{$minSmall} {
+          font-size: 76px;
+          line-height: 99px;
+        }
+      }
+      sup {
+        color: $light;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 49px;
+      }
+    }
+
+    .temperature-range {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 23px;
+      color: $light;
+      @media #{$minSmall} {
+        font-size: 24px;
+        line-height: 31px;
+      }
+    }
+  }
+}
+
+// boxses
+.boxes {
+  background-color: $light;
+  border-radius: 30px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* عرض عنصرين في عمودين */
+  gap: 20px;
+  width: calc(100% / 2);
+  margin-top: 40px;
+  width: 300px;
+  @media #{$extraMinSmall} {
+    width: 416px;
+  }
+  .box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @media #{$extraMinSmall} {
+      gap: 20px;
+    }
+    div {
+      background-color: $Secondary;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: $light;
+      i,
+      svg {
+      }
+      img {
+      }
+    }
+    p {
+      text-transform: capitalize;
+    }
+  }
+}
+// h5
+.heading-5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  @media #{$minSmall} {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+// H4
+.heading-4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  @media #{$minSmall} {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+// h2
+.heading-2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  @media #{$minSmall} {
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 74px;
+  }
+}
+// text for sction
+.text {
+  text-align: center;
+  // color: $light;
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    @media #{$minSmall} {
+      font-size: 57px;
+      line-height: 74px;
+    }
+  }
+  p {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    margin-top: 10px;
+    @media #{$minSmall} {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+}

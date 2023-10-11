@@ -52,17 +52,17 @@
 
       .navigation-buttons {
         button {
-          background: transparent;
-          border-radius: 50%;
-          width: 35px;
-          height: 35px;
-          border: 1px solid #e5e7eb;
+          // background: transparent;
+          // border-radius: 50%;
+          // width: 35px;
+          // height: 35px;
+          // border: 1px solid #e5e7eb;
           padding: 5px;
-          transition: $pri-Transition;
-          color: var(--dark);
+          // transition: $pri-Transition;
+          // color: var(--dark);
           &:hover {
-            background: $grad;
-            color: $light;
+            // background: $grad;
+            // color: $light;
           }
         }
         .previous-button {

@@ -10,9 +10,15 @@ body {
   --royal-blue: #7668e5;
   --gray-medium: #666;
   --dark:#1a1b1e;
+  --Dark-4: #f7f8fa;
+  --Lavender-Blue: #EEEEFF;
+  --Deep-Midnight-Blue:#f7f8fa;
 }
 
 body.dark {
+  --Deep-Midnight-Blue:#121C32;
+  --Lavender-Blue: #2C3549;
+  --Dark-4: #373a40;
   --dark:#f3f0ff;
   --light:#1a1b1e;
   --primery: #1a1b1e;
@@ -22,6 +28,19 @@ body.dark {
   --lavender: rgb(18 28 50/1);
   --primaryBrandColor: #7668e5;
   --gray-medium:#f3f0ff;
+}
+
+.apsdkl {
+  --Dark-0: #c1c2c5;
+  --Dark-1: #a6a7ab;
+  --Dark-2: #909296;
+  --Dark-3: #5c5f66;
+  --Dark-4: #373a40;
+  --Dark-5: #2c2e33;
+  --Dark-6: #25262b;
+  --Dark-7: #1a1b1e;
+  --Dark-8: #141517;
+  --Dark-9: #101113 ;
 }
 
 body {
@@ -122,7 +141,11 @@ a {
 }
 .right .weather-info .weather-icon {
   font-size: 100px;
+  max-width: 100%;
   color: transparent;
+}
+.right .weather-info .temperature-container {
+  margin-top: 10px;
 }
 .right .weather-info .temperature-container .temperature {
   color: #fff;
@@ -191,6 +214,69 @@ a {
   text-transform: capitalize;
 }
 
+.heading-5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+}
+@media (min-width:768px) {
+  .heading-5 {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.heading-4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+}
+@media (min-width:768px) {
+  .heading-4 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+.heading-2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+}
+@media (min-width:768px) {
+  .heading-2 {
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 74px;
+  }
+}
+
+.text {
+  text-align: center;
+}
+.text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+}
+@media (min-width:768px) {
+  .text h2 {
+    font-size: 57px;
+    line-height: 74px;
+  }
+}
+.text p {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  margin-top: 10px;
+}
+@media (min-width:768px) {
+  .text p {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
 .btn {
   border: none;
   padding: 10px 20px;
@@ -209,6 +295,45 @@ a {
 }
 .btn.delete-btn:hover {
   background-color: #6e0000;
+}
+
+.navigation-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navigation-buttons button {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  background: transparent;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e5e7eb;
+  padding: 4px 10px;
+  transition: all 0.3s ease-in-out;
+  color: var(--dark);
+  cursor: pointer;
+}
+.navigation-buttons button:hover {
+  background: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
+  color: #fff;
+}
+.a-btn {
+  background-color: var(--primaryBrandColor);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.a-btn:hover {
+  background-image: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
 }
 
 * {
@@ -507,18 +632,7 @@ a {
   background-color: #353589;
 }
 .weekly .container .buttons-wrapper .navigation-buttons button {
-  background: transparent;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #e5e7eb;
   padding: 5px;
-  transition: all 0.3s ease-in-out;
-  color: var(--dark);
-}
-.weekly .container .buttons-wrapper .navigation-buttons button:hover {
-  background: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
-  color: #fff;
 }
 .weekly .gallary {
   scroll-behavior: smooth;
@@ -865,30 +979,7 @@ a {
   width: 100%;
 }
 .today-weather-details .container .text {
-  text-align: center;
   color: #fff;
-}
-.today-weather-details .container .text h2 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 42px;
-}
-@media (min-width:768px) {
-  .today-weather-details .container .text h2 {
-    font-size: 57px;
-    line-height: 74px;
-  }
-}
-.today-weather-details .container .text p {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  margin-top: 10px;
-}
-@media (min-width:768px) {
-  .today-weather-details .container .text p {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
 }
 .today-weather-details .container .cards {
   display: flex;
@@ -1040,4 +1131,353 @@ a {
 }
 .today-weather-details .container .weather-container .forecast-link:hover i, .today-weather-details .container .weather-container .forecast-link:hover svg, .today-weather-details .container .weather-container .forecast-link:hover .forecast-link {
   padding-left: 10px;
+}
+#hotels {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+#hotels .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+}
+#hotels .container .hotel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+#hotels .container .hotel-container .hotel-title {
+  color: var(--dark);
+  width: 66.67%;
+}
+@media (max-width:767px) {
+  #hotels .container .hotel-container .hotel-title {
+    width: 100%;
+  }
+}
+#hotels .container .hotel-container .hotel-title h2 {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 57px;
+  line-height: 74px;
+}
+#hotels .container .hotel-container .navigation-buttons {
+  justify-content: end;
+}
+@media (min-width:768px) {
+  #hotels .container .hotel-container .navigation-buttons {
+    width: 66.67%;
+  }
+}
+#hotels .container .hotel-container .navigation-buttons .previous-button i {
+  /* Styles for the previous button and its icon */
+}
+#hotels .container .hotel-container .navigation-buttons .next-button i {
+  /* Styles for the next button and its icon */
+}
+#hotels .container .hotel-gallery {
+  margin-top: 30px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  touch-action: pan-y;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card {
+  background-color: var(--Dark-4);
+  padding: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+@media (min-width:992px) {
+  #hotels .container .hotel-gallery .hotel-wrapper .hotel-card {
+    width: calc((100% - 20px) / 3);
+  }
+}
+@media (max-width:991px) {
+  #hotels .container .hotel-gallery .hotel-wrapper .hotel-card {
+    width: calc((100% - 20px) / 2);
+  }
+}
+@media (max-width:576px) {
+  #hotels .container .hotel-gallery .hotel-wrapper .hotel-card {
+    width: calc(100% - 20px);
+  }
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .cover {
+  overflow: hidden;
+  border-radius: 20px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .cover img {
+  border-radius: 20px;
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .cover img:hover {
+  transform: scale(1.1);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info .hotel-title {
+  color: var(--dark);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info .hotel-location {
+  color: var(--gray-medium);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info .hotel-location i, #hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info .hotel-location svg, #hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-info .hotel-location img {
+  margin: 0 10px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-address.figure-caption {
+  color: var(--gray-medium);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-price {
+  color: var(--dark);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-price .currency-symbol {
+  color: #27B02C;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .content .hotel-price .price-per-night {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container {
+  margin-top: 25px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .book-now-button {
+  margin-right: 15px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button {
+  cursor: pointer;
+  color: var(--primaryBrandColor);
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button:hover {
+  transition: all 0.5s ease-in-out;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button:hover i,
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button:hover svg,
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button:hover img {
+  padding-left: 5px;
+}
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button i,
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button svg,
+#hotels .container .hotel-gallery .hotel-wrapper .hotel-card .button-container .details-button img {
+  transition: all 0.5s ease-in-out;
+  margin-left: 10px;
+}
+#hotels .container .see-more {
+  margin: 40px auto;
+}
+@media (min-width:768px) {
+  #hotels .container .see-more {
+    margin: 60px auto;
+  }
+}
+.restaurants {
+  background-color: var(--Dark-4);
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+.restaurants .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+}
+.restaurants .container .restaurant-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.restaurants .container .restaurant-container .restaurant-title {
+  color: var(--dark);
+  width: 66.67%;
+}
+@media (max-width:767px) {
+  .restaurants .container .restaurant-container .restaurant-title {
+    width: 100%;
+  }
+}
+.restaurants .container .restaurant-container .navigation-buttons {
+  justify-content: end;
+}
+@media (min-width:768px) {
+  .restaurants .container .restaurant-container .navigation-buttons {
+    width: 66.67%;
+  }
+}
+.restaurants .container .restaurant-gallery {
+  margin-top: 30px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
+  box-shadow: 0 4px 13px hsla(0, 0%, 71%, 0.25);
+  background-color: var(--lavender);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+@media (min-width:992px) {
+  .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
+    width: calc((100% - 20px) / 3);
+  }
+}
+@media (max-width:991px) {
+  .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
+    width: calc((100% - 20px) / 2);
+  }
+}
+@media (max-width:576px) {
+  .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
+    width: calc(100% - 20px);
+  }
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover {
+  overflow: hidden;
+  border-radius: 20px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover img {
+  border-radius: 20px;
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover img:hover {
+  transform: scale(1.1);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info .restaurant-name {
+  color: var(--dark);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info .restaurant-stars {
+  color: var(--gray-medium);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-address {
+  color: var(--gray-medium);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price {
+  color: var(--dark);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price .currency-symbol {
+  color: #27B02C;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price .price-per-meal {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons {
+  margin-top: 25px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .reserve-now-button {
+  margin-right: 15px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button {
+  cursor: pointer;
+  color: var(--primaryBrandColor);
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button:hover {
+  transition: all 0.5s ease-in-out;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button:hover i,
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button:hover svg,
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button:hover img {
+  padding-left: 5px;
+}
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button i,
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button svg,
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons .details-button img {
+  transition: all 0.5s ease-in-out;
+  margin-left: 10px;
+}
+.restaurants .container .see-more {
+  margin: 40px auto;
+}
+@media (min-width:768px) {
+  .restaurants .container .see-more {
+    margin: 60px auto;
+  }
+}
+.top-city-forecast {
+  padding: 50px 0 60px;
+}
+@media (min-width:768px) {
+  .top-city-forecast {
+    padding: 105px 0 120px;
+  }
+}
+.top-city-forecast .container .text {
+  color: var(--dark);
+}
+.top-city-forecast .container .countries {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 1.25rem;
+}
+@media (min-width:768px) {
+  .top-city-forecast .container .countries {
+    margin-top: 55px;
+  }
+}
+.top-city-forecast .container .countries .country-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 30px;
+  border-radius: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--Deep-Midnight-Blue);
+}
+@media (min-width:768px) {
+  .top-city-forecast .container .countries .country-info {
+    width: 196px;
+  }
+}
+.top-city-forecast .container .countries .country-info .country-flag {
+  padding: 10px;
+  background-color: var(--Lavender-Blue);
+  border-radius: 10px;
+}
+.top-city-forecast .container .countries .country-info .country-flag img {
+  max-width: 100%;
+  width: 50px;
+}
+.top-city-forecast .container .countries .country-info .country-link {
+  color: var(--dark);
 }/*# sourceMappingURL=main.css.map */

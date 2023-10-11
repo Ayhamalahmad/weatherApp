@@ -1,0 +1,167 @@
+@use "../utils/variables" as *;
+.restaurants {
+  background-color: var(--Dark-4);
+  padding-top: 105px;
+  padding-bottom: 105px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+    .restaurant-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      .restaurant-title {
+        color: var(--dark);
+        width: 66.67%;
+        @media #{$maxMobile} {
+          // width: 41.67%;
+          width: 100%;
+        }
+        h2 {
+          // font-weight: 700;
+          // font-size: 57px;
+          // line-height: 74px;
+        }
+      }
+
+      .navigation-buttons {
+        justify-content: end;
+        @media #{$minSmall} {
+          width: 66.67%;
+          // width: 41.67%;
+        }
+      }
+    }
+    .restaurant-gallery {
+        margin-top: 30px;
+        // overflow-x: scroll;
+        // touch-action:pan-x;
+        // user-select: none;
+      .restaurant-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        .restaurant-card {
+          box-shadow: $primary-shadow;
+          background-color: var(--lavender);
+          padding: 20px;
+        //   width: fit-content;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+
+          @media #{$minMedium} {
+            width: calc((100% - 20px) / 3);
+          }
+          @media #{$maxSmall} {
+            width: calc((100% - 20px) / 2);
+          }
+          @media #{$extraSmall} {
+            width: calc(100% - 20px / 1);
+          }
+          .restaurant-cover {
+            overflow: hidden;
+            border-radius: 20px;
+            img {
+              border-radius: 20px;
+              display: block;
+            //   vertical-align: middle;
+              transition: $sec-Transition;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+
+          .restaurant-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .restaurant-info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .restaurant-name {
+                color: var(--dark);
+              }
+
+              .restaurant-stars {
+                color: var(--gray-medium);
+               
+              }
+            }
+
+            .restaurant-address {
+              color: var(--gray-medium);
+
+              // Styles for the restaurant address (p)
+            }
+
+            .restaurant-price {
+              color: var(--dark);
+
+              // Styles for the restaurant price (h4)
+
+              .currency-symbol {
+                color: $limeGreen;
+
+                // Styles for the currency symbol
+              }
+
+              .price-per-meal {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+              }
+            }
+          }
+
+          .restaurant-buttons {
+            margin-top: 25px;
+
+            a {
+              // Common styles for anchor links within the buttons
+            }
+
+            .reserve-now-button {
+              margin-right: 15px;
+            }
+
+            .details-button {
+              cursor: pointer;
+              color: var(--primaryBrandColor);
+              &:hover {
+                transition: $sec-Transition;
+                i,
+                svg,
+                img {
+                  padding-left: 5px;
+                }
+              }
+              i,
+              svg,
+              img {
+                transition: $sec-Transition;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .see-more {
+      margin: 40px auto;
+      @media #{$minSmall} {
+        margin: 60px auto;
+      }
+      a {
+      }
+    }
+  }
+}
