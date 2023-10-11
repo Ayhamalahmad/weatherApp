@@ -1,6 +1,7 @@
 @use "../utils/variables" as *;
 
 body {
+  scroll-behavior: smooth;
   // height: 100%;
   background-color: var(--light);
   font-size: 16px;
@@ -148,25 +149,24 @@ a {
 // boxses
 .boxes {
   background-color: $light;
-  border-radius: 10px;
-  // border-radius: 30px;
-  padding: 10px;
-  // padding: 30px;
+  border-radius: 30px;
+  padding: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* عرض عنصرين في عمودين */
-  // grid-gap: 10px; /* المسافة بين العناصر */
   gap: 20px;
   width: calc(100% / 2);
-  // width: 416px;
-  width: 416px;
   margin-top: 40px;
-  @media #{$maxMobile} {
-    width: 300px;
+  width: 300px;
+  @media #{$extraMinSmall} {
+    width: 416px;
   }
   .box {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    @media #{$extraMinSmall} {
+      gap: 20px;
+    }
     div {
       background-color: $Secondary;
       padding: 10px 20px;

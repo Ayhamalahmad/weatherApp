@@ -2,12 +2,15 @@
 .header {
   padding: 38px 0;
   background-color: var(--primery);
-  // position: fixed;
+  position: fixed;
   width: 100%;
+  top: 0;
+  z-index: 100000;
   .container {
     transition: transform 0.5s ease-in-out;
     display: flex;
     justify-content: space-between;
+    // margin-top: 110px;
     &.active {
       flex-wrap: wrap;
     }

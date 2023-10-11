@@ -5,6 +5,7 @@
   @include prefixer(box-sizing, border-box, ("webkit", "moz", "o", "ms"));
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 .container {
   width: 100%;

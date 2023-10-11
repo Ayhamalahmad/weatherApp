@@ -1,12 +1,17 @@
 @use "../utils/variables" as *;
 .today-weather-details {
     background-image: url(../../imges/details-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 45px 0 60px;
     @media #{$minSmall} {
         padding: 105px 0 120px;
     }
   display: flex;
   flex-direction: column;
+  .container{
+    width: 100%;
   .text {
     text-align: center;
     color: $light;
@@ -144,8 +149,10 @@
     }
     .temperature-range {
       display: flex;
-      align-items: center;
       gap: 10px;
+      align-items: baseline;
+      margin-left: 10px;
+      margin-top: 15px;
       .high-temperature,
       .current-temperature {
         color: $light;
@@ -163,6 +170,7 @@
         font-size: 24px;
         font-weight: 600;
         line-height: 34px;
+        opacity: .7;
         @media #{$minSmall} {
           font-size: 32px;
           line-height: 42px;
@@ -180,6 +188,10 @@
         align-items: start;
         gap: 10px;
         // color: $light;
+        &:first-child,&:last-child{
+          padding-left:5px;
+        }
+        
         &:not(:last-child) {
           border-right: 1px solid $light;
           padding-right: 5px;
@@ -189,6 +201,7 @@
         .temperature {
         }
         .time {
+          margin-top: .75rem;
         }
         .condition {
         }
@@ -197,8 +210,17 @@
     .news-heading {
     }
     .forecast-link {
-      i {
+      cursor: pointer;
+      color: $light ;
+      &:hover{
+        transition: $pri-Transition;
+        i,svg,.forecast-link{
+          padding-left: 10px;
+        }
+      }
+      i,svg,.forecast-link {
       }
     }
   }
+}
 }
