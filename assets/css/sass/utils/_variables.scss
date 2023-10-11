@@ -34,8 +34,10 @@ body {
   --Dark-4: #f7f8fa;
   --Lavender-Blue: #EEEEFF;
   --Deep-Midnight-Blue:#f7f8fa;
+  --Cloudy-Silver:#e5e7eb;
 }
 body.dark {
+  --Cloudy-Silver:rgb(233 233 233/1);
   --Deep-Midnight-Blue:#121C32;
   // --Midnight-Blue:#2C3549;
   --Lavender-Blue: #2C3549;

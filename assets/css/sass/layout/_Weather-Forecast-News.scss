@@ -1,0 +1,107 @@
+@use "../utils/variables" as *;
+.weather-forecast-news {
+  padding: 50px 0 60px;
+  background-color: var(--light-gray);
+  @media #{$minSmall} {
+    padding: 105px 0 120px;
+  }
+  .container {
+    
+    max-width: 1296px;
+
+    .text {
+      color: var(--dark);
+      h2 {
+      }
+      p {
+      }
+    }
+
+    .news-cards-con {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      @media #{$minSmall} {
+        margin-top: 55px;
+      }
+      .news-card {
+        padding: 20px 20px 13px;
+        width: fit-content;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        border: 1px solid var(--Cloudy-Silver);
+        width: 320px;
+        @media #{$minSmall} {
+            width: 416px;
+            
+        }
+        .news-cover {
+          overflow: hidden;
+          border-radius: 20px;
+          img {
+            border-radius: 20px;
+            display: block;
+            // vertical-align: middle;
+            transition: $sec-Transition;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .news-content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .news-name {
+            color: var(--gray-medium);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span.author {
+            }
+            i.fas.fa-circle {
+            }
+            span.date {
+            }
+          }
+          h4.news-title {
+            color: var(--gray-medium);
+
+            a.news-link {
+              color: inherit;
+            }
+          }
+          a.read-more {
+            color: var(--primaryBrandColor);
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 19px;
+            @media #{$minSmall} {
+              font-size: 18px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+    }
+
+    .see-more{
+        width: 100%;
+        margin-top: 40px;
+        text-align: center;
+        a{
+            margin: auto;
+            
+        }
+    }
+    
+  }
+}

@@ -15,11 +15,12 @@
       }
     }
     .countries{
-        margin-top: 40px;
-        display: flex;
-        align-items: center;
-        justify-self: center;
-        gap: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: 40px;
         @media #{$minSmall} {
             margin-top: 55px;
         }
