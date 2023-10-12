@@ -777,6 +777,7 @@ a {
   }
 }
 .weekly .gallary .today-wrapper .weather-box .weather-description p {
+  text-transform: capitalize;
   color: var(--gray-medium);
   font-family: Lato;
   font-size: 16px;

@@ -19,7 +19,7 @@ import {
   cityName,
   locationBtn,
 } from "./vars/home-vars.js";
-import { weeklyWrapper } from "./vars/weekly-vars.js";
+import { weeklyWrapper, todayWrapper } from "./vars/weekly-vars.js";
 let latitude1;
 let longitude2;
 // Api Url
@@ -115,6 +115,54 @@ async function getWeather() {
         );
       });
     }
+    // hours
+    data.list?.forEach((e) => {
+      const dateTimeParts =
+        e.dt_txt.split(" ")[1].split(":")[0] === "00"
+          ? 12
+          : e.dt_txt.split(" ")[1].split(":")[0];
+      const temperature = Math.floor(e.main.temp - 273.15);
+      const temperatureMax = Math.floor(e.main.temp_max - 273.15);
+      const main = e.weather[0].main;
+      const description = e.weather[0].description;
+      const speed = e.wind.speed;
+      // Funtion to create card
+      const createHourly = () => {
+        return `
+        <div class="weather-box">
+        <img src="http://openweathermap.org/img/wn/${e.weather[0].icon}@4x.png" alt="" />
+
+        <div class="weather-info">
+          <span class="weather-text">${main}</span>
+          <span class="weather-time">${dateTimeParts}</span>
+        </div>
+
+        <div class="temperature">
+          <h2 class="temperature-high">${temperature}</h2>
+          <h4 class="temperature-low">${temperatureMax}</h4>
+        </div>
+
+        <div class="wind-rain">
+          <div class="wind-speed">
+            <i class="fas fa-wind icon"></i>
+            <span class="wind-speed-text">${speed}km/H</span>
+          </div>
+
+          <div class="rain">
+            <i class="fas fa-cloud-showers-heavy icon"></i>
+            <span class="rain-text">rainData</span>
+          </div>
+        </div>
+
+        <div class="weather-description">
+          <p>${description}</p>
+        </div>
+      </div>
+        `;
+      };
+      // Insert Data
+      todayWrapper.insertAdjacentHTML("beforeend", createHourly());
+    });
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }

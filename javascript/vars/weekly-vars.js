@@ -9,3 +9,4 @@ export let nextBtn = document.querySelector(".next-button");
 export let previouBtn = document.querySelector(".previous-button");
 export let navigationBtns = document.querySelectorAll(".navigation-buttons button");
 export let weeklyWrapper = document.querySelector(".weekly-wrapper");
+export let todayWrapper = document.querySelector(".today-wrapper");

@@ -48,8 +48,8 @@ function scrollpreviou(peBtn, Gallery, ElementTo, gap = 0) {
   });
 }
 // Today
-scrollNext(nextBtn, gallary, weatherBox, 20);
-scrollpreviou(previouBtn, gallary, weatherBox, 20);
+scrollNext(nextBtn, gallary, 350, 20);
+scrollpreviou(previouBtn, gallary, 350, 20);
 // weekly
 scrollNext(nextBtn, gallaryWeekly, 350, 20);
 scrollpreviou(previouBtn, gallaryWeekly, 350, 20);
