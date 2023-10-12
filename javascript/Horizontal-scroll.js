@@ -64,6 +64,7 @@ let scrollInterval;
 let isScrollingForward = true;
 const scrollDelay = 4000;
 function startAutoScroll(Gallery, card, wrapper) {
+  console.log("started");
   scrollInterval = setInterval(() => {
     if (isScrollingForward) {
       if (Gallery.scrollLeft + Gallery.clientWidth >= wrapper.scrollWidth) {
@@ -80,7 +81,19 @@ function startAutoScroll(Gallery, card, wrapper) {
     }
   }, scrollDelay);
 }
-// Subscribe
-startAutoScroll(weatherUpdateGallery, updateCard, weatherUpdateWrapper);
-// Recent Search
-startAutoScroll(recentGallery, recentCard, recentWrapper);
+let isTargetReached = false;
+let isTargetReached2 = false;
+window.addEventListener('scroll', () => {
+  const currentPosition = window.scrollY;
+  
+  if (!isTargetReached && currentPosition >= recentGallery.offsetTop - 700) {
+    isTargetReached = true;
+    console.log('لقد وصلت إلى الجزء المستهدف');
+    startAutoScroll(recentGallery, recentCard, recentWrapper);
+  }
+  if (!isTargetReached2 && currentPosition >= weatherUpdateGallery.offsetTop - 700) {
+    isTargetReached2 = true;
+    console.log('لقد وصلت إلى الجزء المستهدف');
+    startAutoScroll(weatherUpdateGallery, updateCard, weatherUpdateWrapper);
+  }
+});

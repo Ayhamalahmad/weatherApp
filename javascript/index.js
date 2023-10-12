@@ -72,8 +72,6 @@ async function getWeather() {
     }
     // fiveDaysforecast
     if (data.list) {
-
-      // weeklyWrapper.textContent="";
       const createWeatherWeekly =(element) => {
         const dateString = element.dt_txt.split(" ")[0];
         const dateParts = dateString.split("-");
@@ -100,12 +98,16 @@ async function getWeather() {
       const uniqueForecastDays = [];
       const fiveDaysforecast = data.list.filter((forecast) => {
         const forecastDate = new Date(forecast.dt_txt).getDate();
+
         if (!uniqueForecastDays.includes(forecastDate)) {
           uniqueForecastDays.push(forecastDate);
           return true;
         }
         return false;
       });
+      // reset weeklyWrapper 
+      weeklyWrapper.textContent="";
+      console.log("fiveDaysforecast",fiveDaysforecast);
       fiveDaysforecast.forEach((element) => {
         weeklyWrapper.insertAdjacentHTML(
           "beforeend",
@@ -171,7 +173,6 @@ locationInput.addEventListener("keydown", (e) => {
 });
 
 function getWeatherWeekly(city) {
-  // console.log("latitude1, longitude2",latitude1, longitude2);
   if (latitude1, longitude2) {
     apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude1}&lon=${longitude2}&appid=${APIKey}`;
   } else {
