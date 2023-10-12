@@ -53,7 +53,6 @@ scrollpreviou(hotelPreBtn, hotelGallery, hotelCard, 7);
 scrollNext(restaurantsNextBtn, restaurantGallery, restaurantCard, 7);
 scrollpreviou(restaurantsPrevBtn, restaurantGallery, restaurantCard, 7);
 
-
 //
 // let scrollInterval;
 // let rightSc=document.querySelector(".right-sc");
@@ -88,37 +87,46 @@ scrollpreviou(restaurantsPrevBtn, restaurantGallery, restaurantCard, 7);
 // const rightContainer = document.querySelector(".recent-search .right");
 // const box = document.querySelector(".recent-search .right .wrapper .box");
 
-// function startAutoScroll() {
-//   let scrollInterval;
-//   const scrollDelay = 1000;
-//   let weatherUpdateGallery = document.querySelector(".weather-update-gallery");
-//   let updateCard = document.querySelector(".update-card");
-//   let weatherUpdateWrapper = document.querySelector(".weather-update-wrapper");
-//   scrollInterval = setInterval(() => {
-//     console.log(
-//       "weatherUpdateGallery.scrollLeft:",
-//       weatherUpdateGallery.scrollLeft
-//     );
-//     console.log(
-//       "weatherUpdateGallery.scrollWidth:",
-//       weatherUpdateGallery.scrollWidth
-//     );
-//     console.log(
-//       "weatherUpdateGallery.clientWidth:",
-//       weatherUpdateGallery.clientWidth
-//     );
-//     console.log(
-//       "weatherUpdateGallery.offsetWidth:",
-//       weatherUpdateGallery.offsetWidth
-//     );
-//     // if (rightContainer.scrollLeft + rightContainer.clientWidth >= rightContainer.scrollWidth) {
-//     if (weatherUpdateGallery.scrollLeft + weatherUpdateGallery.clientWidth >= weatherUpdateWrapper.scrollWidth) {
-//       console.log("Reached the end, resetting scrollLeft.");
-//       weatherUpdateGallery.scrollLeft = 0;
-//       clearInterval(scrollInterval);
-//     }
-//     weatherUpdateGallery.scrollLeft += updateCard.offsetWidth;
-//   }, scrollDelay);
-// }
-
-// startAutoScroll();
+let scrollInterval;
+let isScrollingForward = true;
+let weatherUpdateGallery = document.querySelector(".weather-update-gallery");
+const scrollDelay = 4000;
+let weatherUpdateWrapper = document.querySelector(".weather-update-wrapper");
+let updateCard = document.querySelector(".update-card");
+function startAutoScroll() {
+  scrollInterval = setInterval(() => {
+    console.log(
+      "weatherUpdateGallery.scrollLeft:",
+      weatherUpdateGallery.scrollLeft
+    );
+    console.log(
+      "weatherUpdateGallery.scrollWidth:",
+      weatherUpdateGallery.scrollWidth
+    );
+    console.log(
+      "weatherUpdateGallery.clientWidth:",
+      weatherUpdateGallery.clientWidth
+    );
+    console.log(
+      "weatherUpdateGallery.offsetWidth:",
+      weatherUpdateGallery.offsetWidth
+    );
+    if (isScrollingForward) {
+      if (
+        weatherUpdateGallery.scrollLeft + weatherUpdateGallery.clientWidth >=
+        weatherUpdateWrapper.scrollWidth
+      ) {
+        console.log("Reached the end, resetting scrollLeft.");
+        isScrollingForward = false;
+      }
+      weatherUpdateGallery.scrollLeft += updateCard.offsetWidth;
+    } else {
+      if (weatherUpdateGallery.scrollLeft <= 0) {
+        console.log("Reached the start, reversing scroll direction.");
+        isScrollingForward = true;
+      }
+      weatherUpdateGallery.scrollLeft -= updateCard.offsetWidth;
+    }
+  }, scrollDelay);
+}
+startAutoScroll();

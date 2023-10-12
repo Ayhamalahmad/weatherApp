@@ -1,18 +1,18 @@
 @use "../utils/variables" as *;
 
 .subscribe {
-  // overflow: hidden;
   background-image: url(../../imges/subscribe-bg.png);
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 20px;
   .weather-update-gallery {
     margin: auto;
-    // overflow-x:scroll;
     width: 100%;
     overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .weather-update-wrapper {
       display: flex;
       align-items: center;

@@ -1594,6 +1594,9 @@ a {
   width: 100%;
   overflow-x: scroll;
 }
+.subscribe .weather-update-gallery::-webkit-scrollbar {
+  display: none;
+}
 .subscribe .weather-update-gallery .weather-update-wrapper {
   display: flex;
   align-items: center;
