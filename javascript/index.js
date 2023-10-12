@@ -18,8 +18,8 @@ import {
   weatherDescription,
   cityName,
   locationBtn,
-} from "./home-vars.js";
-import { weeklyWrapper } from "./weekly-vars.js";
+} from "./vars/home-vars.js";
+import { weeklyWrapper } from "./vars/weekly-vars.js";
 let latitude1;
 let longitude2;
 // Api Url

@@ -4,29 +4,29 @@ import {
   gallary,
   nextBtn,
   previouBtn,
-} from "./weekly-vars.js";
+} from "./vars/weekly-vars.js";
 import {
   hotelCard,
   hotelGallery,
   hotelPreBtn,
   hotelNextBtn,
-} from "./hotel-vars.js";
+} from "./vars/hotel-vars.js";
 import {
   restaurantsPrevBtn,
   restaurantsNextBtn,
   restaurantGallery,
   restaurantCard,
-} from "./Restaurants-vars .js";
+} from "./vars/Restaurants-vars .js";
 import {
   weatherUpdateGallery,
   weatherUpdateWrapper,
   updateCard,
-} from "./Subscribe-vars.js";
+} from "./vars/Subscribe-vars.js";
 import {
   recentGallery,
   recentWrapper,
   recentCard,
-} from "./Recent-Search-vars.js";
+} from "./vars/Recent-Search-vars.js";
 function scrollNext(neBtn, Gallery, ElementTo, gap = 0) {
   neBtn.addEventListener("click", (e) => {
     if (typeof ElementTo === "number") {

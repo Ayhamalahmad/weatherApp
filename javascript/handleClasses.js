@@ -3,14 +3,14 @@ import {
   headerContainer,
   headerNav,
   headerLinks,
-} from "./header-vars.js";
+} from "./vars/header-vars.js";
 import {
   groupAllBtn,
   todayBtn,
   weeklyBtn,
   gallary,
   gallaryWeekly,
-} from "./weekly-vars.js";
+} from "./vars/weekly-vars.js";
 
 menuBtn.addEventListener("click", () => {
   headerContainer.classList.toggle("active");
