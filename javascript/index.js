@@ -70,9 +70,9 @@ async function getWeather() {
       temperature.appendChild(temperatureUnit);
       tempMax.appendChild(temperatureUnit);
     }
-    // fiveDaysforecast
+    // five Days forecast
     if (data.list) {
-      const createWeatherWeekly =(element) => {
+      const createWeatherWeekly = (element) => {
         const dateString = element.dt_txt.split(" ")[0];
         const dateParts = dateString.split("-");
         const year = parseInt(dateParts[0]);
@@ -90,11 +90,13 @@ async function getWeather() {
               <p class="date">${
                 daysOfWeekAbbreviations[dateObject.getDay()]
               }, ${day} ${monthAbbreviations[month]}</p>
-              <h2 class="temperature">${(element.main.temp - 273.15).toFixed()}</h2>
+              <h2 class="temperature">${(
+                element.main.temp - 273.15
+              ).toFixed()}</h2>
             </div>
           </div>
         `;
-      }
+      };
       const uniqueForecastDays = [];
       const fiveDaysforecast = data.list.filter((forecast) => {
         const forecastDate = new Date(forecast.dt_txt).getDate();
@@ -104,9 +106,8 @@ async function getWeather() {
         }
         return false;
       });
-      // reset weeklyWrapper 
-      weeklyWrapper.textContent="";
-      console.log("fiveDaysforecast",fiveDaysforecast);
+      // reset weeklyWrapper
+      weeklyWrapper.textContent = "";
       fiveDaysforecast.forEach((element) => {
         weeklyWrapper.insertAdjacentHTML(
           "beforeend",
@@ -151,6 +152,9 @@ function positionErrorCallback(error) {
 function searchCity(city) {
   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`;
   getWeather();
+  // reset latitude1 longitude2
+  latitude1 = false;
+  longitude2 = false;
 }
 
 searchBTN.addEventListener("click", () => {
@@ -172,7 +176,7 @@ locationInput.addEventListener("keydown", (e) => {
 });
 
 function getWeatherWeekly(city) {
-  if (latitude1, longitude2) {
+  if ((latitude1, longitude2)) {
     apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude1}&lon=${longitude2}&appid=${APIKey}`;
   } else {
     if (city) {
@@ -181,7 +185,7 @@ function getWeatherWeekly(city) {
       apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${APIKey}`;
     }
   }
-  console.log("getWeatherWeekly",apiUrl);
+  console.log("getWeatherWeekly", apiUrl);
   getWeather();
 }
 
@@ -209,6 +213,3 @@ function getWeatherWeekly(city) {
 //   `;
 // }
 getWeatherWeekly();
-
-
-
