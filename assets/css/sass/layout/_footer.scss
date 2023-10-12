@@ -1,0 +1,82 @@
+@use "../utils/variables" as *;
+footer {
+  background-color: $dark;
+  color: $light;
+  padding-top: 55px;
+  @media #{$minSmall} {
+    padding-top: 115px;
+  }
+  .container {
+    .logo-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      border-bottom: 1px solid var(--Cloudy-Silver);
+      padding-bottom: 10px;
+      a.footer-logo {
+        img{
+          width: 100%;
+        }
+      }
+      ul.links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        li {
+        }
+      }
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+
+      @media #{$maxMobile} {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .copyright {
+        p.figure-caption {
+          span.year {
+          }
+        }
+      }
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+          border: 1px solid $light;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          transition: $pri-Transition;
+          @media #{$maxMobile} {
+            padding: 4px;
+          }
+          &:hover {
+            background-color: $light;
+            i,
+            svg {
+            color: $dark;
+            }
+          }
+          i,
+          svg {
+            transition: $pri-Transition;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+}

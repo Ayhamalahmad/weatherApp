@@ -5,18 +5,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  color: $light;
-  background-color: $dark-grayish-purple;
-  &:hover {
-    background-color: $SteelGray;
-  }
-  &.delete-btn {
-    background-color: $dark-red;
-    color: $light;
-    &:hover {
-        background-color: $DarkMaroon;
-    }
-  }
 }
 // 
 .navigation-buttons {

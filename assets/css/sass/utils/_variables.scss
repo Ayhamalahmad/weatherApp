@@ -14,6 +14,7 @@ $minLarge2: "(min-width: 1280px)";
 // #F7F8FA => do not  forget to make it var
 // Colors
 $light: #fff;
+$dark:#000000;
 $Secondary: #5f3dc4;
 $primaryBrandColor: #353589;
 $grad: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
@@ -84,5 +85,5 @@ $DarkMaroon: #6e0000;
   --Dark-6: #25262b;
   --Dark-7: #1a1b1e;
   --Dark-8: #141517;
-  --Dark-9: #101113
+  --Dark-9: #101113;
 }

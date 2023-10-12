@@ -1,0 +1,113 @@
+@use "../utils/variables" as *;
+
+.subscribe {
+  overflow: hidden;
+  background-image: url(../../imges/subscribe-bg.png);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20px;
+  .container {
+    .weather-update-gallery {
+      .weather-update-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .update-card {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .subscription-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 38px;
+      @media #{$maxSmall} {
+        flex-direction: column;
+      }
+      .text {
+        color: $light;
+        text-align: unset;
+        @media #{$minMedium} {
+          width: calc(100% / 2);
+        }
+        // @media #{$maxSmall} {
+        //     margin-top: 38px;
+        // }
+        // @media #{$maxMobile} {
+        //     width: 100%;
+        // }
+        h2 {
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 42px;
+          font-weight: 700;
+          font-size: 57px;
+          line-height: 74px;
+          @media #{$minSmall} {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 42px;
+          }
+        }
+        p {
+          padding: unset;
+        }
+      }
+
+      form.subscription-form {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+        border-radius: 30px;
+        //
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 100%;
+        @media #{$minMedium} {
+          width: calc(100% / 2);
+        }
+        @media #{$maxSmall} {
+          margin-top: 38px;
+        }
+
+        input.subscription-input {
+          padding: 10px 15px;
+          /* border-radius: 10px; */
+          border: none;
+          background: transparent;
+          border-bottom: 1px solid $light;
+          caret-color: $light;
+          width: 100%;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          &:focus {
+            outline: none;
+          }
+          &[type="text"] {
+            &::placeholder {
+              color: $light;
+            }
+          }
+        }
+
+        button.subscription-button {
+          margin-top: 30px;
+          border: none;
+          /* Button styles */
+        }
+      }
+    }
+  }
+}
