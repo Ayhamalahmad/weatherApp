@@ -60,39 +60,6 @@ scrollpreviou(hotelPreBtn, hotelGallery, hotelCard, 7);
 scrollNext(restaurantsNextBtn, restaurantGallery, restaurantCard, 7);
 scrollpreviou(restaurantsPrevBtn, restaurantGallery, restaurantCard, 7);
 
-//
-// let scrollInterval;
-// let rightSc=document.querySelector(".right-sc");
-// let box = document.querySelector(".right .wrapper .box");
-//
-// let leftSc=document.querySelector(".left-sc");
-// let rightContainer = document.querySelector(".right");
-// leftSc.addEventListener("click", (e) => {
-//   rightContainer.scrollLeft += 196 + 20;
-//   console.log("clicked");
-// });
-
-//
-// function startAutoScroll() {
-//   let rightContainer = document.querySelector(".right");
-//   let box = document.querySelector(".right .wrapper .box");
-
-//   scrollInterval = setInterval(() => {
-//   gallary.scrollLeft += weatherBox.offsetWidth + 20;
-//   if (gallary.scrollLeft >= gallary.scrollWidth - gallary.clientWidth) {
-//     gallary.scrollLeft = 0;
-//   }
-//   }, 5000);
-// }
-// startAutoScroll();
-// document.addEventListener("DOMContentLoaded", function () {
-//   startAutoScroll();
-// });
-
-//
-
-// const rightContainer = document.querySelector(".recent-search .right");
-// const box = document.querySelector(".recent-search .right .wrapper .box");
 let scrollInterval;
 let isScrollingForward = true;
 const scrollDelay = 4000;
