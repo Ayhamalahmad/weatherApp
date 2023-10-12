@@ -909,27 +909,27 @@ a {
     line-height: 74px;
   }
 }
-.recent-search .container .recent-right {
+.recent-search .container .recent-gallery {
   overflow-x: scroll;
   scroll-behavior: smooth;
   width: calc(100% - 20px);
 }
-.recent-search .container .recent-right::-webkit-scrollbar {
+.recent-search .container .recent-gallery::-webkit-scrollbar {
   display: none;
 }
-.recent-search .container .recent-right .wrapper {
+.recent-search .container .recent-gallery .wrapper {
   display: flex;
   align-items: center;
   gap: 20px;
   flex: none;
 }
-.recent-search .container .recent-right .wrapper .box {
+.recent-search .container .recent-gallery .wrapper .box {
   position: relative;
 }
-.recent-search .container .recent-right .wrapper .box img {
+.recent-search .container .recent-gallery .wrapper .box img {
   border-radius: 45px;
 }
-.recent-search .container .recent-right .wrapper .box .contant {
+.recent-search .container .recent-gallery .wrapper .box .contant {
   position: absolute;
   z-index: 999;
   top: 0;
@@ -942,12 +942,12 @@ a {
   padding: 30px 0 0 30px;
   align-items: start;
 }
-.recent-search .container .recent-right .wrapper .box .contant img {
+.recent-search .container .recent-gallery .wrapper .box .contant img {
   max-width: 100%;
   height: auto;
 }
-.recent-search .container .recent-right .wrapper .box .contant h2,
-.recent-search .container .recent-right .wrapper .box .contant p {
+.recent-search .container .recent-gallery .wrapper .box .contant h2,
+.recent-search .container .recent-gallery .wrapper .box .contant p {
   color: #fff;
 }
 .today-weather-details {
