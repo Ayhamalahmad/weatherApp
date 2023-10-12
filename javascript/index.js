@@ -98,7 +98,6 @@ async function getWeather() {
       const uniqueForecastDays = [];
       const fiveDaysforecast = data.list.filter((forecast) => {
         const forecastDate = new Date(forecast.dt_txt).getDate();
-
         if (!uniqueForecastDays.includes(forecastDate)) {
           uniqueForecastDays.push(forecastDate);
           return true;
