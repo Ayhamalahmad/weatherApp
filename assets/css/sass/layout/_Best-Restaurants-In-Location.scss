@@ -10,7 +10,7 @@
     overflow: hidden;
     .restaurant-container {
       display: flex;
-      align-items: center;
+      align-items: end;
       justify-content: space-between;
       gap: 10px;
       .restaurant-title {
@@ -37,24 +37,28 @@
     }
     .restaurant-gallery {
         margin-top: 30px;
-        // overflow-x: scroll;
-        // touch-action:pan-x;
-        // user-select: none;
+        overflow-x: scroll;
+        padding-bottom: 20px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
       .restaurant-wrapper {
         display: flex;
         align-items: center;
-        gap: 30px;
+        // gap: 30px;
+        gap: 7px;
+        flex: none;
+        box-sizing: content-box;
         .restaurant-card {
           box-shadow: $primary-shadow;
           background-color: var(--lavender);
           padding: 20px;
-        //   width: fit-content;
           border-radius: 20px;
           display: flex;
           flex-direction: column;
+          flex: none;
           gap: 10px;
-          width: 100%;
-
+          width: 400px;
           @media #{$minMedium} {
             width: calc((100% - 20px) / 3);
           }
@@ -67,11 +71,13 @@
           .restaurant-cover {
             overflow: hidden;
             border-radius: 20px;
+            width: 100%;
             img {
               border-radius: 20px;
               display: block;
             //   vertical-align: middle;
               transition: $sec-Transition;
+              width: 100%;
               &:hover {
                 transform: scale(1.1);
               }
@@ -113,7 +119,7 @@
                 // Styles for the currency symbol
               }
 
-              .price-per-meal {
+              .delivery {
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 22px;

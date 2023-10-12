@@ -9,7 +9,7 @@
     overflow: hidden;
     .hotel-container {
       display: flex;
-      align-items: center;
+      align-items: end;
       justify-content: space-between;
       gap: 10px;
       .hotel-title {
@@ -53,12 +53,18 @@
 
     .hotel-gallery {
       margin-top: 30px;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .hotel-wrapper {
         display: flex;
         align-items: center;
-        gap: 20px;
+        // gap: 20px;
+        gap: 7px;
         touch-action: pan-y;
         .hotel-card {
+          // margin-right: 24px;
           background-color: var(--Dark-4);
           padding: 20px;
           width: fit-content;

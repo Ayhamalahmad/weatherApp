@@ -821,7 +821,6 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   color: var(--primaryBrandColor);
-  width: 130px;
   border-radius: 50px;
   flex: none;
   border-radius: 9999px;
@@ -1134,7 +1133,7 @@ a {
 }
 #hotels .container .hotel-container {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 10px;
 }
@@ -1169,11 +1168,15 @@ a {
 }
 #hotels .container .hotel-gallery {
   margin-top: 30px;
+  overflow-x: scroll;
+}
+#hotels .container .hotel-gallery::-webkit-scrollbar {
+  display: none;
 }
 #hotels .container .hotel-gallery .hotel-wrapper {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 7px;
   touch-action: pan-y;
 }
 #hotels .container .hotel-gallery .hotel-wrapper .hotel-card {
@@ -1292,7 +1295,7 @@ a {
 }
 .restaurants .container .restaurant-container {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 10px;
 }
@@ -1315,11 +1318,18 @@ a {
 }
 .restaurants .container .restaurant-gallery {
   margin-top: 30px;
+  overflow-x: scroll;
+  padding-bottom: 20px;
+}
+.restaurants .container .restaurant-gallery::-webkit-scrollbar {
+  display: none;
 }
 .restaurants .container .restaurant-gallery .restaurant-wrapper {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 7px;
+  flex: none;
+  box-sizing: content-box;
 }
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
   box-shadow: 0 4px 13px hsla(0, 0%, 71%, 0.25);
@@ -1328,8 +1338,9 @@ a {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  flex: none;
   gap: 10px;
-  width: 100%;
+  width: 400px;
 }
 @media (min-width:992px) {
   .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card {
@@ -1349,11 +1360,13 @@ a {
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover {
   overflow: hidden;
   border-radius: 20px;
+  width: 100%;
 }
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover img {
   border-radius: 20px;
   display: block;
   transition: all 0.5s ease-in-out;
+  width: 100%;
 }
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-cover img:hover {
   transform: scale(1.1);
@@ -1383,7 +1396,7 @@ a {
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price .currency-symbol {
   color: #27B02C;
 }
-.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price .price-per-meal {
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-price .delivery {
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -1570,19 +1583,26 @@ a {
 }
 
 .subscribe {
-  overflow: hidden;
   background-image: url(../../imges/subscribe-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 20px;
 }
-.subscribe .container .weather-update-gallery .weather-update-wrapper {
+.subscribe .weather-update-gallery {
+  margin: auto;
+  width: 100%;
+  overflow-x: scroll;
+}
+.subscribe .weather-update-gallery .weather-update-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
-.subscribe .container .weather-update-gallery .weather-update-wrapper .update-card img {
+.subscribe .weather-update-gallery .weather-update-wrapper .update-card {
+  flex-shrink: 0;
+  width: 305px;
+}
+.subscribe .weather-update-gallery .weather-update-wrapper .update-card img {
   width: 100%;
 }
 .subscribe .container .subscription-form {
