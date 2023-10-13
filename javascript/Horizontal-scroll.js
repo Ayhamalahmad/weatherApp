@@ -62,7 +62,7 @@ scrollpreviou(restaurantsPrevBtn, restaurantGallery, restaurantCard, 7);
 
 let scrollInterval;
 let isScrollingForward = true;
-const scrollDelay = 4000;
+const scrollDelay = 6000;
 function startAutoScroll(Gallery, card, wrapper) {
   console.log("started");
   scrollInterval = setInterval(() => {
@@ -86,14 +86,14 @@ let isTargetReached2 = false;
 window.addEventListener('scroll', () => {
   const currentPosition = window.scrollY;
   
-  if (!isTargetReached && currentPosition >= recentGallery.offsetTop - 700) {
+  if (!isTargetReached && currentPosition >= recentGallery.offsetTop - 500) {
     isTargetReached = true;
-    console.log('لقد وصلت إلى الجزء المستهدف');
+    console.log("I have reached the intended part");
     startAutoScroll(recentGallery, recentCard, recentWrapper);
   }
-  if (!isTargetReached2 && currentPosition >= weatherUpdateGallery.offsetTop - 700) {
+  if (!isTargetReached2 && currentPosition >= weatherUpdateGallery.offsetTop - 500) {
     isTargetReached2 = true;
-    console.log('لقد وصلت إلى الجزء المستهدف');
+    console.log("I have reached the intended part");
     startAutoScroll(weatherUpdateGallery, updateCard, weatherUpdateWrapper);
   }
 });
