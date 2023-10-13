@@ -46,8 +46,11 @@ export const monthAbbreviations = [
   "Nov",
   "Dec",
 ];
+export let currentDate = new Date();
+// for hourly
+export const currentDay = currentDate.getDate();
+
 export default function handleData(){
-    let currentDate = new Date();
     const hours = currentDate.getHours();
     const minutes = currentDate.getMinutes();
     
