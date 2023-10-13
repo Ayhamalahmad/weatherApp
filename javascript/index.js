@@ -22,10 +22,13 @@ import {
   locationBtn,
 } from "./vars/home-vars.js";
 import { weeklyWrapper, todayWrapper } from "./vars/weekly-vars.js";
-import { 
+import {
   currentTemperature,
   NewsWeatherInfo,
-  highTemperature, } from "./vars/cardNew-vars.js";
+  highTemperature,
+  timeSunrise,
+  timeSunset,
+} from "./vars/cardNew-vars.js";
 let latitude1;
 let longitude2;
 // Api Url
@@ -42,7 +45,7 @@ async function getWeather() {
   try {
     let response = await fetch(apiUrl);
     let data = await response.json();
-    // console.log(data);
+    console.log(data);
     handleData();
     if (data) {
       if (data && data.cod === "404") {
@@ -55,6 +58,11 @@ async function getWeather() {
       }
       if (data.main && data.wind && data.weather && data.clouds && data.sys) {
         country.textContent = data.sys.country;
+        // sunrise and sunset
+        const sunsetTime = new Date(data.sys.sunset * 1000);
+        const sunriseTime = new Date(data.sys.sunrise * 1000);
+        timeSunrise.textContent=`${sunriseTime.getHours()}:${sunriseTime.getMinutes()} AM`;
+        timeSunset.textContent=`${sunsetTime.getHours()}:${sunsetTime.getMinutes()} PM`;
         // card left
         const rainData = data.rain;
         if (rainData && rainData["1h"]) {
