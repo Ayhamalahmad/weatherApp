@@ -22,8 +22,10 @@ import {
   locationBtn,
 } from "./vars/home-vars.js";
 import { weeklyWrapper, todayWrapper } from "./vars/weekly-vars.js";
-// import { currentTemperature } from "./vars/news-vars";
-// console.log(currentTemperature);
+import { 
+  currentTemperature,
+  NewsWeatherInfo,
+  highTemperature, } from "./vars/cardNew-vars.js";
 let latitude1;
 let longitude2;
 // Api Url
@@ -33,11 +35,7 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=met
 var temperatureUnit = document.createElement("sup");
 temperatureUnit.textContent = "℃";
 // °
-let currentTemperature = document.querySelector(".current-temperature");
-let NewsWeatherInfo = document.querySelector(
-  ".today-weather-details .weather-container  .weather-info"
-);
-let highTemperature = document.querySelector(".high-temperature");
+
 const hourlyDataForCurrentDay = [];
 
 async function getWeather() {
@@ -86,9 +84,6 @@ async function getWeather() {
         currentTemperature.textContent = `${Math.trunc(data.main.temp_min)}°`;
         highTemperature.textContent = `${Math.floor(data.main.temp_max)}°`;
       }
-      // tempMax.forEach((e)=>{
-      //   e.appendChild(temperatureUnit);
-      // })
     }
 
     // five Days forecast
