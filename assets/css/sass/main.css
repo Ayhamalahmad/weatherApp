@@ -886,7 +886,7 @@ a {
   align-items: center;
   padding: 120px 0;
 }
-@media (max-width:767px) {
+@media (max-width:991px) {
   .recent-search .container {
     flex-direction: column;
     padding: 120px 15px;
@@ -914,7 +914,7 @@ a {
 .recent-search .container .recent-gallery {
   overflow-x: scroll;
   scroll-behavior: smooth;
-  width: calc(100% - 20px);
+  width: 100%;
 }
 .recent-search .container .recent-gallery::-webkit-scrollbar {
   display: none;
@@ -924,9 +924,25 @@ a {
   align-items: center;
   gap: 20px;
   flex: none;
+  width: 100%;
 }
 .recent-search .container .recent-gallery .wrapper .box {
   position: relative;
+}
+@media (min-width:992px) {
+  .recent-search .container .recent-gallery .wrapper .box {
+    width: calc((100% - 20px) / 2);
+  }
+}
+@media (max-width:991px) {
+  .recent-search .container .recent-gallery .wrapper .box {
+    width: calc((100% - 20px) / 3);
+  }
+}
+@media (max-width:576px) {
+  .recent-search .container .recent-gallery .wrapper .box {
+    width: calc(100% - 10px);
+  }
 }
 .recent-search .container .recent-gallery .wrapper .box img {
   border-radius: 45px;

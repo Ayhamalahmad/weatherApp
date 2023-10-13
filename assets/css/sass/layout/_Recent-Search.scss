@@ -7,7 +7,7 @@
     align-items: center;
     padding: 120px 0;
     // margin-left: 0;
-    @media #{$maxMobile} {
+    @media #{$maxSmall} {
       flex-direction: column;
       padding: 120px 15px;
     }
@@ -33,7 +33,7 @@
     .recent-gallery {
       overflow-x: scroll;
       scroll-behavior: smooth;
-      width: calc(100% - 20px);
+      width: 100%;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -41,9 +41,20 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        // gap: 35px/;
         flex: none;
+        width: 100%;
         .box {
           position: relative;
+          @media #{$minMedium} {
+            width: calc((100% - 20px) / 2);
+          }
+          @media #{$maxSmall} {
+            width: calc((100% - 20px) / 3);
+          }
+          @media #{$extraSmall} {
+            width: calc(100% - 20px / 2);
+          }
           img {
           // width: 100%;
             border-radius: 45px;
