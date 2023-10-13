@@ -66,7 +66,7 @@ The Weather App relies on the OpenWeatherMap API for fetching weather data.
 
 ### Author
 
-The Weather App was developed by [Ayham Alahmad]. You can contact the author at [ayhamalahmadcontact@gmail.com].
+The Weather App was developed by Ayham Alahmad. You can contact the author at ayhamalahmadcontact@gmail.com.
 
 
 
