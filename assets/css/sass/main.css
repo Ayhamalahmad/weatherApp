@@ -1730,7 +1730,11 @@ footer .container .logo-links {
   border-bottom: 1px solid var(--Cloudy-Silver);
   padding-bottom: 10px;
 }
-footer .container .logo-links a.footer-logo img {
+footer .container .logo-links .footer-logo {
+  color: #fff;
+  font-size: 50px;
+}
+footer .container .logo-links .footer-logo img {
   width: 100%;
 }
 footer .container .logo-links ul.links {
@@ -1739,6 +1743,9 @@ footer .container .logo-links ul.links {
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+}
+footer .container .logo-links ul.links li, footer .container .logo-links ul.links a {
+  color: #fff;
 }
 footer .container .footer-content {
   display: flex;
@@ -1760,8 +1767,8 @@ footer .container .footer-content .socials {
 footer .container .footer-content .socials a {
   border: 1px solid #fff;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
   text-align: center;
   transition: all 0.3s ease-in-out;
 }

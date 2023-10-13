@@ -15,7 +15,9 @@ footer {
       gap: 15px;
       border-bottom: 1px solid var(--Cloudy-Silver);
       padding-bottom: 10px;
-      a.footer-logo {
+      .footer-logo {
+        color: $light;
+        font-size: 50px;
         img{
           width: 100%;
         }
@@ -26,7 +28,8 @@ footer {
         justify-content: center;
         gap: 10px;
         cursor: pointer;
-        li {
+        li,a {
+          color: $light;
         }
       }
     }
@@ -54,10 +57,11 @@ footer {
         a {
           border: 1px solid $light;
           border-radius: 50%;
-          width: 30px;
-          height: 30px;
+          width: 33px;
+          height: 33px;
           text-align: center;
           transition: $pri-Transition;
+          // padding: 1px;
           @media #{$maxMobile} {
             padding: 4px;
           }
