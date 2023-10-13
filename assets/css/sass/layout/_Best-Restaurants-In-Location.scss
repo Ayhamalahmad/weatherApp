@@ -98,7 +98,12 @@
 
               .restaurant-stars {
                 color: var(--gray-medium);
-               
+
+               i,svg{
+                &:not(:last-child){
+                  color: $sunshine-yellow;
+               }
+               }
               }
             }
 

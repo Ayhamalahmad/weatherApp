@@ -47,7 +47,8 @@
         &.active {
           flex-direction: column;
         }
-        li {
+        li,a {
+          
           color: var(--Secondary);
           // margin-left: 10px;
           cursor: pointer;

@@ -404,7 +404,7 @@ a {
 .header .container .nav .links.active {
   flex-direction: column;
 }
-.header .container .nav .links li {
+.header .container .nav .links li, .header .container .nav .links a {
   color: var(--Secondary);
   cursor: pointer;
 }
@@ -951,6 +951,7 @@ a {
 .recent-search .container .recent-gallery .wrapper .box .contant h2,
 .recent-search .container .recent-gallery .wrapper .box .contant p {
   color: #fff;
+  text-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 .today-weather-details {
   background-image: url(../../imges/details-bg.png);
@@ -1389,6 +1390,9 @@ a {
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info .restaurant-stars {
   color: var(--gray-medium);
 }
+.restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info .restaurant-stars i:not(:last-child), .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-info .restaurant-stars svg:not(:last-child) {
+  color: #F9D620;
+}
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-content .restaurant-address {
   color: var(--gray-medium);
 }
@@ -1636,15 +1640,6 @@ a {
   font-weight: 700;
   line-height: 42px;
   font-weight: 700;
-  font-size: 57px;
-  line-height: 74px;
-}
-@media (min-width:768px) {
-  .subscribe .container .subscription-form .text h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 42px;
-  }
 }
 .subscribe .container .subscription-form .text p {
   padding: unset;
@@ -1683,6 +1678,7 @@ a {
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: #fff;
 }
 .subscribe .container .subscription-form form.subscription-form input.subscription-input:focus {
   outline: none;

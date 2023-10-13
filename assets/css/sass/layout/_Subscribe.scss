@@ -43,24 +43,11 @@
         @media #{$minMedium} {
           width: calc(100% / 2);
         }
-        // @media #{$maxSmall} {
-        //     margin-top: 38px;
-        // }
-        // @media #{$maxMobile} {
-        //     width: 100%;
-        // }
         h2 {
           font-size: 32px;
           font-weight: 700;
           line-height: 42px;
           font-weight: 700;
-          font-size: 57px;
-          line-height: 74px;
-          @media #{$minSmall} {
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 42px;
-          }
         }
         p {
           padding: unset;
@@ -98,6 +85,7 @@
           width: 100%;
           padding-top: 15px;
           padding-bottom: 15px;
+          color: $light;
           &:focus {
             outline: none;
           }
