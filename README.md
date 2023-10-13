@@ -59,7 +59,7 @@ Before using the code, you need to replace the `APIKey` variable with your own O
 
 ```javascript
 let APIKey = "YOUR_API_KEY_HERE";
-
+```
 ### Dependencies
 
 The Weather App relies on the OpenWeatherMap API for fetching weather data.
