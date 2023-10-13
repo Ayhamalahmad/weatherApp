@@ -3,6 +3,7 @@ import handleData, {
   monthAbbreviations,
   currentDay,
 } from "./date.js";
+import { updateElementText } from "./functions/functions.js";
 import {
   country,
   locationInput,
@@ -21,22 +22,29 @@ import {
   locationBtn,
 } from "./vars/home-vars.js";
 import { weeklyWrapper, todayWrapper } from "./vars/weekly-vars.js";
+// import { currentTemperature } from "./vars/news-vars";
+// console.log(currentTemperature);
 let latitude1;
 let longitude2;
 // Api Url
-// https://wecast.vercel.app/
+//template =>  https://wecast.vercel.app/
 let APIKey = "473a86fc6ac47386e6d6c5132cc575a8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${APIKey}`;
 var temperatureUnit = document.createElement("sup");
-temperatureUnit.textContent = "c";
+temperatureUnit.textContent = "℃";
+// °
+let currentTemperature = document.querySelector(".current-temperature");
+let NewsWeatherInfo = document.querySelector(
+  ".today-weather-details .weather-container  .weather-info"
+);
+let highTemperature = document.querySelector(".high-temperature");
 const hourlyDataForCurrentDay = [];
 
 async function getWeather() {
   try {
     let response = await fetch(apiUrl);
     let data = await response.json();
-    console.log("getWeather", apiUrl);
-    console.log(data);
+    // console.log(data);
     handleData();
     if (data) {
       if (data && data.cod === "404") {
@@ -47,33 +55,42 @@ async function getWeather() {
         }
         filedMeessage.classList.remove("active");
       }
-      const rainData = data.rain;
-      if (rainData && rainData["1h"]) {
-        const rainAmount = rainData["1h"];
-        console.log("rainAmount",rainAmount);
-        rain.textContent = `rain ${rainAmount}h`;
-      } else {
-        rain.textContent = `rain ${0}h`;
-      }
       if (data.main && data.wind && data.weather && data.clouds && data.sys) {
         country.textContent = data.sys.country;
-        humidity.textContent = `${data.main.humidity}%`;
-        temperature.textContent = Math.trunc(data.main.temp);
-        tempMin.textContent = `${Math.trunc(data.main.temp_min)}`;
-        tempMax.textContent = `- ${Math.trunc(data.main.temp_max)}`;
-        clouds.textContent = `clouds ${data.clouds.all}%`;
-        wind.textContent = `Wind ${data.wind.speed}km/h`;
+        // card left
+        const rainData = data.rain;
+        if (rainData && rainData["1h"]) {
+          const rainAmount = rainData["1h"];
+          updateElementText(rain, `rain ${rainAmount}h`);
+        } else {
+          updateElementText(rain, `rain ${0}h`);
+        }
+        updateElementText(humidity, `${data.main.humidity}%`);
+        updateElementText(clouds, `clouds ${data.clouds.all}%`);
+        updateElementText(wind, `Wind ${data.wind.speed}km/h`);
+
+        // card right
         var iconurl =
           "http://openweathermap.org/img/wn/" +
           data.weather[0].icon +
           "@4x" +
           ".png";
-        weatherIcon.src = iconurl;
-        weatherDescription.textContent = data.weather[0].description;
+        weatherIcon.forEach((e) => {
+          e.src = iconurl;
+        });
+        updateElementText(temperature, Math.trunc(data.main.temp));
+        updateElementText(weatherDescription, data.weather[0].description);
+        updateElementText(tempMin, `${Math.trunc(data.main.temp_min)}°`);
+        updateElementText(tempMax, `- ${Math.trunc(data.main.temp_max)}°`);
+        // news card
+        currentTemperature.textContent = `${Math.trunc(data.main.temp_min)}°`;
+        highTemperature.textContent = `${Math.floor(data.main.temp_max)}°`;
       }
-      temperature.appendChild(temperatureUnit);
-      tempMax.appendChild(temperatureUnit);
+      // tempMax.forEach((e)=>{
+      //   e.appendChild(temperatureUnit);
+      // })
     }
+
     // five Days forecast
     if (data.list) {
       const createWeatherWeekly = (element) => {
@@ -96,7 +113,7 @@ async function getWeather() {
               }, ${day} ${monthAbbreviations[month]}</p>
               <h2 class="temperature">${(
                 element.main.temp - 273.15
-              ).toFixed()}</h2>
+              ).toFixed()}°</h2>
             </div>
           </div>
         `;
@@ -129,7 +146,8 @@ async function getWeather() {
           hourlyDataForCurrentDay.push(e);
         }
       });
-      // hours
+      // reset NewsWeatherInfo
+      NewsWeatherInfo.textContent = "";
       // reset todayWrapper
       todayWrapper.textContent = "";
       hourlyDataForCurrentDay.forEach((e) => {
@@ -160,12 +178,14 @@ async function getWeather() {
 
     <div class="weather-info">
       <span class="weather-text">${main}</span>
-      <span class="weather-time">${hour12Format < 10 ? `0${hour12Format}` : hour12Format} ${period}</span>
+      <span class="weather-time">${
+        hour12Format < 10 ? `0${hour12Format}` : hour12Format
+      } ${period}</span>
     </div>
 
     <div class="temperature">
-      <h2 class="temperature-high">${temperature}</h2>
-      <h4 class="temperature-low">${temperatureMax}</h4>
+      <h2 class="temperature-high">${temperature}°</h2>
+      <h4 class="temperature-low">${temperatureMax}°</h4>
     </div>
 
     <div class="wind-rain">
@@ -176,9 +196,7 @@ async function getWeather() {
 
       <div class="rain">
         <i class="fas fa-cloud-showers-heavy icon"></i>
-        <span class="rain-text">rain ${
-          daylyRain  ? daylyRain : 0
-        } h</span>
+        <span class="rain-text">rain ${daylyRain ? daylyRain : 0} h</span>
       </div>
     </div>
 
@@ -190,6 +208,25 @@ async function getWeather() {
         };
         // Insert Data
         todayWrapper.insertAdjacentHTML("beforeend", createHourly());
+        // hourly for news
+        // Funtion to create card
+        const createHourlyNews = () => {
+          return `
+          <div class="weather-details">
+          <i class="fas fa-cloud weather-icon"></i>
+          <span class="temperature">
+          ${temperature}
+            <sup>°</sup>
+          </span>
+          <span class="time">${
+            hour12Format < 10 ? `0${hour12Format}` : hour12Format
+          } ${period}</span>
+          <span class="condition">${description}</span>
+        </div>
+    `;
+        };
+        // Insert Data
+        NewsWeatherInfo.insertAdjacentHTML("beforeend", createHourlyNews());
       });
     }
   } catch (error) {
@@ -262,66 +299,7 @@ function getWeatherWeekly(city) {
       apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${APIKey}`;
     }
   }
-  console.log("getWeatherWeekly", apiUrl);
+  // console.log("getWeatherWeekly", apiUrl);
   getWeather();
 }
-
-// function createWeatherWeekly(element) {
-//   const dateString = element.dt_txt.split(" ")[0];
-//   const dateParts = dateString.split("-");
-//   const year = parseInt(dateParts[0]);
-//   const month = parseInt(dateParts[1]) - 1;
-//   const day = parseInt(dateParts[2]);
-//   const dateObject = new Date(year, month, day);
-//   return `
-//     <div class="box">
-//       <div class="box-image">
-//         <img src="http://openweathermap.org/img/wn/${
-//           element.weather[0].icon
-//         }@4x.png" alt="" />
-//       </div>
-//       <div class="box-content">
-//         <p class="date">${
-//           daysOfWeekAbbreviations[dateObject.getDay()]
-//         }, ${day} ${monthAbbreviations[month]}</p>
-//         <h2 class="temperature">${(element.main.temp - 273.15).toFixed()}</h2>
-//       </div>
-//     </div>
-//   `;
-// }
 getWeatherWeekly();
-
-console.log("hourlyDataForCurrentDay", hourlyDataForCurrentDay);
-// function createHourly(e,dateTimeParts,temperature,temperatureMax,main,description,speed) {
-//   return `
-// <div class="weather-box">
-// <img src="http://openweathermap.org/img/wn/${e.weather[0].icon}@4x.png" alt="" />
-
-// <div class="weather-info">
-// <span class="weather-text">${main}</span>
-// <span class="weather-time">${dateTimeParts}</span>
-// </div>
-
-// <div class="temperature">
-// <h2 class="temperature-high">${temperature}</h2>
-// <h4 class="temperature-low">${temperatureMax}</h4>
-// </div>
-
-// <div class="wind-rain">
-// <div class="wind-speed">
-// <i class="fas fa-wind icon"></i>
-// <span class="wind-speed-text">${speed}km/H</span>
-// </div>
-
-// <div class="rain">
-// <i class="fas fa-cloud-showers-heavy icon"></i>
-// <span class="rain-text">rainData</span>
-// </div>
-// </div>
-
-// <div class="weather-description">
-// <p>${description}</p>
-// </div>
-// </div>
-// `;
-// };
