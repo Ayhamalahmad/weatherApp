@@ -61,8 +61,8 @@ async function getWeather() {
         // sunrise and sunset
         const sunsetTime = new Date(data.sys.sunset * 1000);
         const sunriseTime = new Date(data.sys.sunrise * 1000);
-        timeSunrise.textContent=`${sunriseTime.getHours()}:${sunriseTime.getMinutes()} AM`;
-        timeSunset.textContent=`${sunsetTime.getHours()}:${sunsetTime.getMinutes()} PM`;
+        timeSunrise.textContent=`${sunriseTime.getHours() < 10 ? `0${sunriseTime.getHours()}` : sunriseTime.getHours()}:${sunriseTime.getMinutes() < 10 ? `0${sunriseTime.getMinutes()}` : sunriseTime.getMinutes()} AM`;
+        timeSunset.textContent=`${sunsetTime.getHours() < 10 ? `0${sunsetTime.getHours()}` : sunsetTime.getHours()}:${sunsetTime.getMinutes() < 10 ? `0${sunsetTime.getMinutes()}` : sunsetTime.getMinutes()} PM`;
         // card left
         const rainData = data.rain;
         if (rainData && rainData["1h"]) {

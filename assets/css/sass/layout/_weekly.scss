@@ -146,9 +146,15 @@
             }
           }
         }
+        
         img,
         i,
         svg {
+         
+
+        }
+        img{
+          filter: $drop-shadow;
         }
 
         .weather-info {
@@ -314,7 +320,8 @@
         .box-image {
           img {
             width: 100%;
-            filter: drop-shadow(3px 3px rgb(70, 69, 69));
+            // filter: drop-shadow(3px 3px rgb(70, 69, 69));
+            filter: $drop-shadow;
             // box-shadow: 0 45px 65px rgba(0,0,0,0.50), 0 35px 22px rgba(0,0,0,0.16);
           }
         }

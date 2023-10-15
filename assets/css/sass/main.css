@@ -687,6 +687,9 @@ a {
   transition: all 0.3s ease-in-out;
   color: #fff;
 }
+.weekly .gallary .today-wrapper .weather-box img {
+  filter: drop-shadow(5px 5px 10px var(--gray-medium));
+}
 .weekly .gallary .today-wrapper .weather-box .weather-info {
   display: flex;
   align-items: center;
@@ -844,7 +847,7 @@ a {
 }
 .weekly .weekly-gallary .weekly-wrapper .box .box-image img {
   width: 100%;
-  filter: drop-shadow(3px 3px rgb(70, 69, 69));
+  filter: drop-shadow(5px 5px 10px var(--gray-medium));
 }
 .weekly .weekly-gallary .weekly-wrapper .box .box-content {
   margin-top: 15px;
@@ -1422,6 +1425,7 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
+  margin-left: 5px;
 }
 .restaurants .container .restaurant-gallery .restaurant-wrapper .restaurant-card .restaurant-buttons {
   margin-top: 25px;
