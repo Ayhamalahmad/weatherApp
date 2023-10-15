@@ -1,6 +1,6 @@
 # Weather App
 
-The Weather App is a JavaScript application that allows users to fetch and display weather information using the OpenWeatherMap API. It provides current weather data, a five-day weather forecast, user location detection, and city search functionality. This README provides an overview of the application and its key components.
+The Weather App is a JavaScript application that allows users to fetch and display weather information using the OpenWeatherMap API. It provides current weather data, a five-day weather forecast, user location detection, and city search functionality.
 ### Live Demo
 
 You can experience the Weather App by visiting the [live demo](https://ayhamalahmad.github.io/weatherApp/).
